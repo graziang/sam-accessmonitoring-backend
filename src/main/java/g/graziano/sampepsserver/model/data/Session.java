@@ -1,10 +1,13 @@
 package g.graziano.sampepsserver.model.data;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.Date;
 
+@JsonIgnoreProperties(ignoreUnknown=true)
 @Entity
 public class Session implements Serializable {
 

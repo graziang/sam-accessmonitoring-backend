@@ -38,7 +38,7 @@ public class RestController {
         Family family = familyService.getFamily(familyName);
 
         if(family == null){
-            return this.getError("Family not found:" + familyName, HttpStatus.BAD_REQUEST);
+            return this.getError("Family not found: [family_name: " + familyName + "]", HttpStatus.BAD_REQUEST);
         }
         return new ResponseEntity(family, HttpStatus.OK);
     }
@@ -76,7 +76,7 @@ public class RestController {
         Child child = familyService.getChild(childID);
 
         if(child == null){
-            return this.getError("Child not found: [id: " + childID + "]", HttpStatus.BAD_REQUEST);
+            return this.getError("Child not found: [child_id: " + childID + "]", HttpStatus.BAD_REQUEST);
         }
         return new ResponseEntity(child, HttpStatus.OK);
     }
