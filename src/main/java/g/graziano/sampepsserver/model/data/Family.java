@@ -28,7 +28,7 @@ public class Family implements Serializable {
 
     private boolean active;
 
-    @OneToMany(mappedBy = "children", cascade = CascadeType.ALL,  fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "family", cascade = CascadeType.ALL,  fetch = FetchType.LAZY)
     private Set<Child> children = new HashSet<>();
 
     public Family(){
