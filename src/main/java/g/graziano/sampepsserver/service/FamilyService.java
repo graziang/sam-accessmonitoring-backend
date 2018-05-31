@@ -1,5 +1,6 @@
 package g.graziano.sampepsserver.service;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import g.graziano.sampepsserver.exception.NotFoundException;
 import g.graziano.sampepsserver.model.data.Child;
 import g.graziano.sampepsserver.model.data.Family;
@@ -95,6 +96,7 @@ public class FamilyService {
        return this.sessionRepository.save(session);
     }
 
+    @JsonIgnoreProperties(ignoreUnknown=true)
     public List<Session> getSessions(Long childId) throws NotFoundException {
 
 
