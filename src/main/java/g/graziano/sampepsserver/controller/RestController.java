@@ -14,9 +14,9 @@ public class RestController {
     }
 
 
-    @GetMapping("notest")
-    public String notest(){
+    @GetMapping("testno")
+    public String testno(){
 
-        return "notest";
+        return "testno";
     }
 }
