@@ -123,7 +123,7 @@ public class FamilyService {
         c.add(Calendar.MINUTE,-1);
         Date date = c.getTime();
 
-        return this.sessionRepository.findSessionsByDateAfterAndChildIdIs(date, childId);
+        return this.sessionRepository.findSessionsByDateIsAfterAndChildIdIs(date, childId);
     }
 
 
