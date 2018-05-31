@@ -10,6 +10,13 @@ public class RestController {
     @GetMapping("test")
     public String test(){
 
-        return "fava";
+        return "test";
+    }
+
+
+    @GetMapping("notest")
+    public String notest(){
+
+        return "notest";
     }
 }
