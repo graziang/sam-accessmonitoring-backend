@@ -33,7 +33,7 @@ public class RestController {
     @PostMapping("/test")
     public ResponseEntity testno(@RequestParam(value = "name", required = true) String name){
 
-        if(familyRepository.existsByName("test")){
+        if(familyRepository.existsByName(name)){
             Map responsError = new HashMap();
             responsError.put("error", "Name: " + name + " already used");
 
