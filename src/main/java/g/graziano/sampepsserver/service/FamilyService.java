@@ -29,8 +29,7 @@ public class FamilyService {
 
     @PostConstruct
     public void init(){
-
-        logger.error("quiss: " + passwordEncoder.encode("sam-peps"));
+        
     }
 
     public Family createFamily(Family family){
