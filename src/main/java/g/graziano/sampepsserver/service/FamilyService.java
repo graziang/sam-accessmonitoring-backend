@@ -15,6 +15,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -118,8 +119,11 @@ public class FamilyService {
             throw new NotFoundException(errorMessage);
         }
 
+        Calendar c = Calendar.getInstance() ;
+        c.add(Calendar.MINUTE,-1);
+        Date date = c.getTime();
 
-        return this.sessionRepository.findSessionsByDateSecondsAfterAndChildIdAndChildLike(30, childId);
+        return this.sessionRepository.findSessionsByDateAfterAndChildIdAndChildLike(date, childId);
     }
 
 
