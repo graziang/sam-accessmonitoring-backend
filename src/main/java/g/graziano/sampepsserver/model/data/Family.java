@@ -25,14 +25,10 @@ public class Family implements Serializable {
     private String description;
 
     @JsonIgnore
-    @NotNull
-    @Size(min = 60, max = 60)
     private String password;
 
 
     @JsonIgnore
-    @NotNull
-    @Size(min = 60, max = 60)
     private String childrenPassword;
 
     private boolean active;
