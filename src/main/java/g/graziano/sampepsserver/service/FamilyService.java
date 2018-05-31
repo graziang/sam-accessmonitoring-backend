@@ -119,11 +119,11 @@ public class FamilyService {
             throw new NotFoundException(errorMessage);
         }
 
-        Calendar c = Calendar.getInstance() ;
-        c.add(Calendar.MINUTE,-1);
-        Date date = c.getTime();
+        final long ONE_MINUTE_IN_MILLIS = 60000;//millisecs
+        long curTimeInMs = System.currentTimeMillis();
+        Date afterAddingMins = new Date(curTimeInMs - (2 * ONE_MINUTE_IN_MILLIS));
 
-        return this.sessionRepository.findSessionsByDateIsAfterAndChildIdIs(date, childId);
+        return this.sessionRepository.findSessionsByDateAfter(afterAddingMins);
     }
 
 

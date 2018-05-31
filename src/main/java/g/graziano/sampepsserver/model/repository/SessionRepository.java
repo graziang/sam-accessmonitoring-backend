@@ -10,5 +10,5 @@ public interface SessionRepository extends JpaRepository<Session, Integer> {
 
     List<Session> findSessionsByChildId(Long id);
 
-    List<Session> findSessionsByDateIsAfterAndChildIdIs(Date date, Long childId);
+    List<Session> findSessionsByDateAfter(Date date);
 }
