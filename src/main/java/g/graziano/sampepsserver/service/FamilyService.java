@@ -123,7 +123,7 @@ public class FamilyService {
         long curTimeInMs = System.currentTimeMillis();
         Date afterAddingMins = new Date(curTimeInMs - (2 * ONE_MINUTE_IN_MILLIS));
 
-        return this.sessionRepository.findByDateAfterAndChildId(afterAddingMins, childId);
+        return this.sessionRepository.findByDateBeforeAndChildId(afterAddingMins, childId);
     }
 
 
