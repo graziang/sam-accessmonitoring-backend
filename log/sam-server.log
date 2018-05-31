@@ -196,3 +196,29 @@ Consider the following:
 	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
 	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
 
+2018-05-31 14:35:38.397  INFO 30324 --- [main] g.g.s.SamPepsServerApplication           : Starting SamPepsServerApplication on admin-PC1 with PID 30324 (C:\Users\ggraziano\code\sam-peps-server\target\classes started by ggraziano in C:\Users\ggraziano\code\sam-peps-server)
+2018-05-31 14:35:38.406  INFO 30324 --- [main] g.g.s.SamPepsServerApplication           : No active profile set, falling back to default profiles: default
+2018-05-31 14:35:38.482  INFO 30324 --- [main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@1ff7d8c: startup date [Thu May 31 14:35:38 CEST 2018]; root of context hierarchy
+2018-05-31 14:35:39.962  INFO 30324 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-05-31 14:35:40.002  INFO 30324 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-05-31 14:35:40.288  INFO 30324 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.17.Final}
+2018-05-31 14:35:40.292  INFO 30324 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-05-31 14:35:40.401  INFO 30324 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-05-31 14:35:40.595 ERROR 30324 --- [main] com.zaxxer.hikari.HikariConfig           : HikariPool-1 - jdbcUrl is required with driverClassName.
+2018-05-31 14:35:40.595  WARN 30324 --- [main] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata : jdbcUrl is required with driverClassName.
+2018-05-31 14:35:40.630  INFO 30324 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2018-05-31 14:35:40.655  INFO 30324 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000422: Disabling contextual LOB creation as connection was null
+2018-05-31 14:35:40.659  INFO 30324 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@84117b
+2018-05-31 14:35:40.910  INFO 30324 --- [main] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@15c94be'
+2018-05-31 14:35:40.915  INFO 30324 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-05-31 14:35:41.565  INFO 30324 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-05-31 14:35:41.572  INFO 30324 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-05-31 14:35:41.583  INFO 30324 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-05-31 14:35:41.597  INFO 30324 --- [main] g.g.s.SamPepsServerApplication           : Started SamPepsServerApplication in 3.7 seconds (JVM running for 5.197)
+2018-05-31 14:35:41.600  INFO 30324 --- [Thread-10] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@1ff7d8c: startup date [Thu May 31 14:35:38 CEST 2018]; root of context hierarchy
+2018-05-31 14:35:41.602  INFO 30324 --- [Thread-10] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-05-31 14:35:41.603  INFO 30324 --- [Thread-10] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2018-05-31 14:35:41.603  INFO 30324 --- [Thread-10] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-05-31 14:35:41.604  INFO 30324 --- [Thread-10] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed drop of schema as part of SessionFactory shut-down'
