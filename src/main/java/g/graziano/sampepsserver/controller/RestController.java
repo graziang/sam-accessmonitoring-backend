@@ -82,7 +82,7 @@ public class RestController {
     }
 
     @PostMapping("/session")
-    public ResponseEntity createSession(@Valid @RequestParam(value = "child_id", required = true) Long childId, @Valid @RequestBody Session session){
+    public ResponseEntity createSession(@Valid @RequestParam(value = "child_id", required = true) Long childId, @RequestBody Session session){
 
         try {
             session = this.familyService.createSession(childId, session);
