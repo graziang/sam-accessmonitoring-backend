@@ -16,13 +16,13 @@ public class RestController {
     @Autowired
     FamilyRepository familyRepository;
 
-    @GetMapping("test")
+    @GetMapping("/test")
     public List<Family> test(){
 
         return familyRepository.findAll();
     }
 
-    @PostMapping("test")
+    @PostMapping("/test")
     public Family testno(){
 
         return familyRepository.save(new Family("test", "desc", true));
