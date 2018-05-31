@@ -16,34 +16,31 @@ public class Family implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
 
     private String name;
 
     private String description;
 
+    private String password;
+
+    private String childrenPassword;
+
     private boolean active;
+
+    @OneToMany(mappedBy = "children", cascade = CascadeType.ALL,  fetch = FetchType.LAZY)
+    private Set<Child> children = new HashSet<>();
 
     public Family(){
 
     }
 
-    public Family(String name, String description, boolean active) {
+    public Family(String name, String description, String password, String childrenPassword, boolean active) {
         this.name = name;
         this.description = description;
+        this.password = password;
+        this.childrenPassword = childrenPassword;
         this.active = active;
-    }
-
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -62,11 +59,35 @@ public class Family implements Serializable {
         this.description = description;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getChildrenPassword() {
+        return childrenPassword;
+    }
+
+    public void setChildrenPassword(String childrenPassword) {
+        this.childrenPassword = childrenPassword;
+    }
+
     public boolean isActive() {
         return active;
     }
 
     public void setActive(boolean active) {
         this.active = active;
+    }
+
+    public Set<Child> getChildren() {
+        return children;
+    }
+
+    public void setChildren(Set<Child> children) {
+        this.children = children;
     }
 }

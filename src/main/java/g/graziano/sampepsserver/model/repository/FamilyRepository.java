@@ -7,5 +7,6 @@ import java.util.List;
 
 public interface FamilyRepository extends JpaRepository<Family, Integer> {
 
-    public boolean existsByName(String name);
+    boolean existsByName(String name);
+    Family findByName(String name);
 }
