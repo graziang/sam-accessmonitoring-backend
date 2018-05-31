@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface SessionRepository extends JpaRepository<Session, Integer> {
 
-    List<Session> findByChildId(Long id);
+    List<Session> findSessionsByChildId(Long id);
 }
