@@ -4,6 +4,7 @@ package g.graziano.sampepsserver.controller;
 import g.graziano.sampepsserver.exception.NotFoundException;
 import g.graziano.sampepsserver.model.data.Child;
 import g.graziano.sampepsserver.model.data.Family;
+import g.graziano.sampepsserver.model.data.Session;
 import g.graziano.sampepsserver.model.repository.FamilyRepository;
 import g.graziano.sampepsserver.service.FamilyService;
 import org.slf4j.Logger;
@@ -32,7 +33,7 @@ public class RestController {
 
 
     @GetMapping("/family")
-    public ResponseEntity getFamily( @RequestParam(value = "name", required = true) String familyName){
+    public ResponseEntity getFamily( @RequestParam(value = "family_name", required = true) String familyName){
 
         Family family = familyService.getFamily(familyName);
 
@@ -57,7 +58,7 @@ public class RestController {
     }
 
     @PostMapping("/child")
-    public ResponseEntity createChild(@Valid @RequestParam(value = "family", required = true) String familyName, @Valid @RequestBody Child child){
+    public ResponseEntity createChild(@Valid @RequestParam(value = "family_name", required = true) String familyName, @Valid @RequestBody Child child){
 
         Child newChild = null;
         try {
@@ -70,18 +71,33 @@ public class RestController {
     }
 
     @GetMapping("/child")
-    public ResponseEntity getChild( @RequestParam(value = "id", required = true) Long childID){
+    public ResponseEntity getChild( @RequestParam(value = "child_id", required = true) Long childID){
 
         Child child = familyService.getChild(childID);
 
         if(child == null){
-            return this.getError("Child not found: [id: " + child + "]", HttpStatus.BAD_REQUEST);
+            return this.getError("Child not found: [id: " + childID + "]", HttpStatus.BAD_REQUEST);
         }
         return new ResponseEntity(child, HttpStatus.OK);
     }
 
-    public ResponseEntity createSession(){
-        return null;
+    @PostMapping("/session")
+    public ResponseEntity createSession(@Valid @RequestParam(value = "child_id", required = true) Long childId, @Valid @RequestBody Session session){
+
+        try {
+            session = this.familyService.createSession(childId, session);
+        } catch (NotFoundException e) {
+            return this.getError(e.getMessage(), HttpStatus.BAD_REQUEST);
+        }
+
+        return new ResponseEntity(session, HttpStatus.OK);
+    }
+
+    @GetMapping("/session")
+    public ResponseEntity getSessions(){
+
+
+        return new ResponseEntity(this.familyService.getSessions(), HttpStatus.OK);
     }
 
 

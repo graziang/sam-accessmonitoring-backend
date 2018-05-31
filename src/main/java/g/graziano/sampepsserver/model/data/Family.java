@@ -39,14 +39,6 @@ public class Family implements Serializable {
 
     }
 
-    public Family(String name, String description, String password, String childrenPassword, boolean active) {
-        this.name = name;
-        this.description = description;
-        this.password = password;
-        this.childrenPassword = childrenPassword;
-        this.active = active;
-    }
-
     public Long getId() {
         return id;
     }

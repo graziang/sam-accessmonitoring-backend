@@ -14,6 +14,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import java.util.List;
 
 @Service
 public class FamilyService {
@@ -90,6 +91,10 @@ public class FamilyService {
         session.setChild(child);
 
        return this.sessionRepository.save(session);
+    }
+
+    public List<Session> getSessions(){
+        return this.sessionRepository.findAll();
     }
 
 
