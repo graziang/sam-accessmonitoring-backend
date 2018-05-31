@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8db4c70a-5c28-4a0e-aa6f-ae51f15d429f" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/g/graziano/sampepsserver/component/MyUserDetailsService.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/g/graziano/sampepsserver/configuration/SecurityConfiguration.java" afterPath="$PROJECT_DIR$/src/main/java/g/graziano/sampepsserver/configuration/SecurityConfiguration.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -106,24 +108,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SamPepsServerApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/g/graziano/sampepsserver/SamPepsServerApplication.java">
+      <file leaf-file-name="SecurityConfiguration.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/g/graziano/sampepsserver/configuration/SecurityConfiguration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="396">
+              <caret line="40" column="113" lean-forward="false" selection-start-line="40" selection-start-column="113" selection-end-line="40" selection-end-column="113" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1376#1377#0" expanded="true" />
+                <element signature="e#1426#1427#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SecurityConfiguration.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/g/graziano/sampepsserver/configuration/SecurityConfiguration.java">
+      <file leaf-file-name="MyUserDetailsService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/g/graziano/sampepsserver/component/MyUserDetailsService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="11" column="101" lean-forward="false" selection-start-line="11" selection-start-column="101" selection-end-line="11" selection-end-column="101" />
+            <state relative-caret-position="442">
+              <caret line="32" column="19" lean-forward="false" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="38" />
               <folding>
-                <element signature="e#1543#1544#0" expanded="true" />
-                <element signature="e#1593#1594#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -143,6 +148,7 @@
     <findStrings>
       <find>bean</find>
       <find>@Bean public PasswordEncoder</find>
+      <find>UserDetailsService' that could not be found.</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -170,6 +176,7 @@
         <option value="$PROJECT_DIR$/src/main/java/g/graziano/sampepsserver/controller/RestController.java" />
         <option value="$PROJECT_DIR$/src/main/java/g/graziano/sampepsserver/model/data/Family.java" />
         <option value="$PROJECT_DIR$/src/main/java/g/graziano/sampepsserver/model/data/Child.java" />
+        <option value="$PROJECT_DIR$/src/main/java/g/graziano/sampepsserver/component/MyUserDetailsService.java" />
         <option value="$PROJECT_DIR$/src/main/java/g/graziano/sampepsserver/configuration/SecurityConfiguration.java" />
       </list>
     </option>
@@ -257,6 +264,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="sampepsserver" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sam-peps-server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sam-peps-server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="sampepsserver" type="462c0819:PsiDirectoryNode" />
+              <item name="component" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sam-peps-server" type="b2602c69:ProjectViewProjectNode" />
@@ -433,12 +449,12 @@
       <option name="presentableId" value="Default" />
       <updated>1527768856017</updated>
       <workItem from="1527768858196" duration="12412000" />
-      <workItem from="1527788183095" duration="2086000" />
+      <workItem from="1527788183095" duration="2640000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14498000" />
+    <option name="totallyTimeSpent" value="15052000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
@@ -570,8 +586,9 @@
         <state relative-caret-position="315">
           <caret line="29" column="5" lean-forward="false" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
           <folding>
-            <element signature="e#1543#1544#0" expanded="true" />
-            <element signature="e#1593#1594#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1376#1377#0" expanded="true" />
+            <element signature="e#1426#1427#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -670,13 +687,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/g/graziano/sampepsserver/component/MyUserDetailsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="32" column="19" lean-forward="false" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/g/graziano/sampepsserver/configuration/SecurityConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="11" column="101" lean-forward="false" selection-start-line="11" selection-start-column="101" selection-end-line="11" selection-end-column="101" />
+        <state relative-caret-position="396">
+          <caret line="40" column="113" lean-forward="false" selection-start-line="40" selection-start-column="113" selection-end-line="40" selection-end-column="113" />
           <folding>
-            <element signature="e#1543#1544#0" expanded="true" />
-            <element signature="e#1593#1594#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1376#1377#0" expanded="true" />
+            <element signature="e#1426#1427#0" expanded="true" />
           </folding>
         </state>
       </provider>
