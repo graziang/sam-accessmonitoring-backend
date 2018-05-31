@@ -1,6 +1,7 @@
 package g.graziano.sampepsserver.controller;
 
 
+import g.graziano.sampepsserver.exception.NotFoundException;
 import g.graziano.sampepsserver.model.data.Child;
 import g.graziano.sampepsserver.model.data.Family;
 import g.graziano.sampepsserver.model.repository.FamilyRepository;
@@ -44,11 +45,13 @@ public class RestController {
     @PostMapping("/family")
     public ResponseEntity createFamily(@Valid @RequestBody Family family){
 
-        Family newFamily = familyService.createFamily(family);
-
-        if(newFamily == null){
-            return this.getError("Family name already used:" + family.getName(), HttpStatus.BAD_REQUEST);
+        Family newFamily = null;
+        try {
+            newFamily = familyService.createFamily(family);
+        } catch (NotFoundException e) {
+            return this.getError(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
+
 
         return new ResponseEntity(newFamily, HttpStatus.OK);
     }
@@ -56,10 +59,11 @@ public class RestController {
     @PostMapping("/child")
     public ResponseEntity createChild(@Valid @RequestParam(value = "family", required = true) String familyName, @Valid @RequestBody Child child){
 
-        Child newChild = familyService.createChild(familyName, child);
-
-        if(newChild == null){
-            return this.getError("Family not found:" + familyName, HttpStatus.BAD_REQUEST);
+        Child newChild = null;
+        try {
+            newChild = familyService.createChild(familyName, child);
+        } catch (NotFoundException e) {
+            return this.getError(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
 
         return new ResponseEntity(newChild, HttpStatus.OK);
@@ -71,7 +75,7 @@ public class RestController {
         Child child = familyService.getChild(childID);
 
         if(child == null){
-            return this.getError("Child not found:" + child, HttpStatus.BAD_REQUEST);
+            return this.getError("Child not found: [id: " + child + "]", HttpStatus.BAD_REQUEST);
         }
         return new ResponseEntity(child, HttpStatus.OK);
     }

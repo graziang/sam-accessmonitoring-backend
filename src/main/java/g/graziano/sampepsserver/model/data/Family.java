@@ -14,8 +14,6 @@ import java.util.Set;
 @Entity
 public class Family implements Serializable {
 
-    private static final long serialVersionUID = -3009157732242241606L;
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -47,6 +45,14 @@ public class Family implements Serializable {
         this.password = password;
         this.childrenPassword = childrenPassword;
         this.active = active;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {

@@ -1,7 +1,9 @@
 package g.graziano.sampepsserver.service;
 
+import g.graziano.sampepsserver.exception.NotFoundException;
 import g.graziano.sampepsserver.model.data.Child;
 import g.graziano.sampepsserver.model.data.Family;
+import g.graziano.sampepsserver.model.data.Session;
 import g.graziano.sampepsserver.model.repository.ChildRepository;
 import g.graziano.sampepsserver.model.repository.FamilyRepository;
 import org.slf4j.Logger;
@@ -32,11 +34,12 @@ public class FamilyService {
 
     }
 
-    public Family createFamily(Family family){
+    public Family createFamily(Family family) throws NotFoundException {
 
         if(familyRepository.existsByName(family.getName())){
-            logger.error("Family not found: "  + family.getName());
-            return null;
+            String errorMessage = "Family already exist: [name: "  + family.getName() + "]";
+            logger.error(errorMessage);
+            throw new NotFoundException(errorMessage);
         }
 
         family.setPassword(passwordEncoder.encode(family.getPassword()));
@@ -49,11 +52,12 @@ public class FamilyService {
         return this.familyRepository.findByName(familyName);
     }
 
-    public Child createChild(String familyName, Child child){
+    public Child createChild(String familyName, Child child) throws NotFoundException {
 
         if(!familyRepository.existsByName(familyName)) {
-            logger.error("Family not found: "  + familyName);
-            return null;
+            String errorMessage = "Family not found: [name: "  + familyName + "]";
+            logger.error(errorMessage);
+            throw new NotFoundException(errorMessage);
         }
 
         Family family = familyRepository.findByName(familyName);
@@ -67,6 +71,11 @@ public class FamilyService {
 
     public Child getChild(Long childId){
         return this.childRepository.findById(childId);
+    }
+
+    public Session createSession(Session session){
+
+       return null;
     }
 
 
