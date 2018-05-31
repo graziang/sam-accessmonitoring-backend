@@ -25,7 +25,7 @@ public class Child {
     public Child(){
 
     }
-    
+
 
     public String getName() {
         return name;
