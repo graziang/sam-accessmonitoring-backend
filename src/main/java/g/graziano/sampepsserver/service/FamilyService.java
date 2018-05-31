@@ -119,7 +119,7 @@ public class FamilyService {
             throw new NotFoundException(errorMessage);
         }
 
-        final long ONE_MINUTE_IN_MILLIS = 60000;//millisecs
+        final long ONE_MINUTE_IN_MILLIS = 24 * 60 * 60000;//millisecs
         long curTimeInMs = System.currentTimeMillis();
         Date afterAddingMins = new Date(curTimeInMs - (2 * ONE_MINUTE_IN_MILLIS));
 
