@@ -25,7 +25,7 @@ public class Family implements Serializable {
     private boolean active;
 
     public Family(){
-        
+
     }
 
     public Family(String name, String description, boolean active) {
