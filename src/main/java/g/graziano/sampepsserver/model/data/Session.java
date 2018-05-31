@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-public class Session implements Serializable{
+public class Session implements Serializable {
 
 
 
