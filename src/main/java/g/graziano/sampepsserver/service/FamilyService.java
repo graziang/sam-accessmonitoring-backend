@@ -105,7 +105,7 @@ public class FamilyService {
         }
 
 
-        return this.sessionRepository.findByChildId(childId);
+        return this.sessionRepository.findSessionsByChildId(childId);
     }
 
 
