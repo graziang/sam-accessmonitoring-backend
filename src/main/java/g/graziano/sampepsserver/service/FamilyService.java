@@ -106,12 +106,10 @@ public class FamilyService {
             throw new NotFoundException(errorMessage);
         }
 
+        long hourMillis = 1000 * 60 * 60;
 
-        Calendar c = Calendar.getInstance() ;
-        c.add(Calendar.MINUTE,-1);
-        Date date = c.getTime();
-
-        return this.sessionRepository.findByDateAfterAndChildId(date, childId);
+        Date oldDate = new Date(System.currentTimeMillis() - (24 * hourMillis));
+        return this.sessionRepository.findByDateAfterAndChildId(oldDate, childId);
     }
-    
+
 }
