@@ -6,6 +6,7 @@ import g.graziano.sampepsserver.model.data.Family;
 import g.graziano.sampepsserver.model.data.Session;
 import g.graziano.sampepsserver.model.repository.ChildRepository;
 import g.graziano.sampepsserver.model.repository.FamilyRepository;
+import g.graziano.sampepsserver.model.repository.SessionRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,9 @@ public class FamilyService {
 
     @Autowired
     private ChildRepository childRepository;
+
+    @Autowired
+    private SessionRepository sessionRepository;
 
 
     @PostConstruct
@@ -73,9 +77,19 @@ public class FamilyService {
         return this.childRepository.findById(childId);
     }
 
-    public Session createSession(Session session){
+    public Session createSession(Long childID, Session session) throws NotFoundException {
 
-       return null;
+        Child child = this.childRepository.findById(childID);
+
+        if(child == null){
+            String errorMessage = "Child not found: [id: "  + childID + "]";
+            logger.error(errorMessage);
+            throw new NotFoundException(errorMessage);
+        }
+
+        session.setChild(child);
+
+       return this.sessionRepository.save(session);
     }
 
 
