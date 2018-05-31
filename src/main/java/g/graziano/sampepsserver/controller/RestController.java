@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @org.springframework.web.bind.annotation.RestController
 public class RestController {
@@ -32,7 +34,10 @@ public class RestController {
     public ResponseEntity testno(@RequestParam(value = "name", required = true) String name){
 
         if(familyRepository.existsByName("test")){
-            return new ResponseEntity<>("Name: " + name + " already used", HttpStatus.BAD_REQUEST);
+            Map responsError = new HashMap();
+            responsError.put("error", "Name: " + name + " already used");
+
+            return new ResponseEntity<>(responsError, HttpStatus.BAD_REQUEST);
         }
 
         return new ResponseEntity<>(familyRepository.save(new Family(name, "desc", true)), HttpStatus.OK);
