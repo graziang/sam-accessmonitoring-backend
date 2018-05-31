@@ -14,6 +14,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -88,6 +89,7 @@ public class FamilyService {
             throw new NotFoundException(errorMessage);
         }
 
+        session.setDate(new Date());
         session.setChild(child);
 
        return this.sessionRepository.save(session);
