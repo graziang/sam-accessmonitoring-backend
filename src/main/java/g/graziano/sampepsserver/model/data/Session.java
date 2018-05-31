@@ -27,6 +27,14 @@ public class Session implements Serializable{
     @JoinColumn(name = "child_id")
     private Child child;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public Date getDate() {
         return date;
     }

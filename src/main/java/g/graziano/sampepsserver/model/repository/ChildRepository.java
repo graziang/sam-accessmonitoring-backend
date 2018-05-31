@@ -6,4 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface ChildRepository extends JpaRepository<Child, Integer> {
 
     Child findById(Long id);
+    boolean existsById(Long id);
 }

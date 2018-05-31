@@ -3,6 +3,8 @@ package g.graziano.sampepsserver.model.data;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Child {
@@ -21,6 +23,11 @@ public class Child {
     @JoinColumn(name = "family_id")
     @JsonIgnore
     private Family family;
+
+    @OneToMany(mappedBy = "child", cascade = CascadeType.ALL,  fetch = FetchType.LAZY)
+    @JsonIgnore
+    private Set<Session> sessions = new HashSet<>();
+
 
     public Child(){
 
@@ -64,5 +71,13 @@ public class Child {
 
     public void setFamily(Family family) {
         this.family = family;
+    }
+
+    public Set<Session> getSessions() {
+        return sessions;
+    }
+
+    public void setSessions(Set<Session> sessions) {
+        this.sessions = sessions;
     }
 }

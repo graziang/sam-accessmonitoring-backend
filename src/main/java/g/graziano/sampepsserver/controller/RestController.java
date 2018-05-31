@@ -94,10 +94,16 @@ public class RestController {
     }
 
     @GetMapping("/session")
-    public ResponseEntity getSessions(){
+    public ResponseEntity getSessions(@Valid @RequestParam(value = "child_id", required = true) Long childId){
 
+        List<Session> sessions = null;
+        try {
+            sessions = this.familyService.getSessions(childId);
+        } catch (NotFoundException e) {
+            return this.getError(e.getMessage(), HttpStatus.BAD_REQUEST);
+        }
 
-        return new ResponseEntity(this.familyService.getSessions(), HttpStatus.OK);
+        return new ResponseEntity(sessions, HttpStatus.OK);
     }
 
 

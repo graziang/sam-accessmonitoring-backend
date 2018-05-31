@@ -93,8 +93,17 @@ public class FamilyService {
        return this.sessionRepository.save(session);
     }
 
-    public List<Session> getSessions(){
-        return this.sessionRepository.findAll();
+    public List<Session> getSessions(Long childId) throws NotFoundException {
+
+
+        if(!childRepository.existsById(childId)) {
+            String errorMessage = "Child not found: [childId: "  + childId + "]";
+            logger.error(errorMessage);
+            throw new NotFoundException(errorMessage);
+        }
+
+
+        return this.sessionRepository.findByChildId(childId);
     }
 
 

@@ -32,10 +32,11 @@ public class Family implements Serializable {
 
     private boolean active;
 
-    @OneToMany(mappedBy = "family", cascade = CascadeType.ALL,  fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "family", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Child> children = new HashSet<>();
 
-    public Family(){
+
+    public Family() {
 
     }
 
@@ -94,4 +95,5 @@ public class Family implements Serializable {
     public void setChildren(Set<Child> children) {
         this.children = children;
     }
+
 }
