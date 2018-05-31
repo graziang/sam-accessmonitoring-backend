@@ -1,22 +1,30 @@
 package g.graziano.sampepsserver.controller;
 
 
+import g.graziano.sampepsserver.model.data.Family;
+import g.graziano.sampepsserver.model.repository.FamilyRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.List;
 
 @org.springframework.web.bind.annotation.RestController
 public class RestController {
 
 
-    @GetMapping("test")
-    public String test(){
+    @Autowired
+    FamilyRepository familyRepository;
 
-        return "test";
+    @GetMapping("test")
+    public List<Family> test(){
+
+        return familyRepository.findAll();
     }
 
+    @PostMapping("test")
+    public Family testno(){
 
-    @GetMapping("testno")
-    public String testno(){
-
-        return "testno";
+        return familyRepository.save(new Family("test", "desc", true));
     }
 }

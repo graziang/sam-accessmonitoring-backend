@@ -9,7 +9,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-public class Sensor implements Serializable {
+public class Family implements Serializable {
 
     private static final long serialVersionUID = -3009157732242241606L;
 
@@ -24,21 +24,14 @@ public class Sensor implements Serializable {
 
     private boolean active;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "thermostat_id")
-    @JsonIgnore
-    private Thermostat thermostat;
-
-    @OneToMany(mappedBy = "sensor", cascade = CascadeType.ALL,  fetch = FetchType.LAZY)
-    @JsonIgnore
-    private Set<Measurement> measurements = new HashSet<>();
-
-    public Sensor() {
-    }
-
-    public Sensor(String name, String description) {
+    public Family(String name, String description, boolean active) {
         this.name = name;
         this.description = description;
+        this.active = active;
+    }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
     }
 
     public long getId() {
@@ -61,31 +54,15 @@ public class Sensor implements Serializable {
         return description;
     }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public boolean isActive() {
         return active;
     }
 
     public void setActive(boolean active) {
         this.active = active;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Thermostat getThermostat() {
-        return thermostat;
-    }
-
-    public void setThermostat(Thermostat thermostat) {
-        this.thermostat = thermostat;
-    }
-
-    public Set<Measurement> getMeasurements() {
-        return measurements;
-    }
-
-    public void setMeasurements(Set<Measurement> measurements) {
-        this.measurements = measurements;
     }
 }
