@@ -119,7 +119,7 @@ public class FamilyService {
         }
 
 
-        return this.sessionRepository.findSessionsByDateSecondsAfterAndChAndChildId(30, childId);
+        return this.sessionRepository.findSessionsByDateSecondsAfterAndChildIdAndChildLike(30, childId);
     }
 
 

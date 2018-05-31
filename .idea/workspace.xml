@@ -125,8 +125,8 @@
       <file leaf-file-name="FamilyService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/g/graziano/sampepsserver/service/FamilyService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="796">
-              <caret line="121" column="86" lean-forward="false" selection-start-line="121" selection-start-column="86" selection-end-line="121" selection-end-column="86" />
+            <state relative-caret-position="768">
+              <caret line="121" column="90" lean-forward="false" selection-start-line="121" selection-start-column="90" selection-end-line="121" selection-end-column="90" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2533#2534#0" expanded="true" />
@@ -195,7 +195,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/g/graziano/sampepsserver/model/repository/SessionRepository.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
-              <caret line="13" column="63" lean-forward="false" selection-start-line="13" selection-start-column="63" selection-end-line="13" selection-end-column="63" />
+              <caret line="13" column="70" lean-forward="false" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="70" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -219,6 +219,8 @@
       <find>@Bean public PasswordEncoder</find>
       <find>UserDetailsService' that could not be found.</find>
       <find>family no</find>
+      <find>ch</find>
+      <find>findSessionsByDateSecondsAfterAndChAndChildId</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -527,12 +529,12 @@
       <updated>1527768856017</updated>
       <workItem from="1527768858196" duration="12412000" />
       <workItem from="1527788183095" duration="5355000" />
-      <workItem from="1527796295988" duration="6768000" />
+      <workItem from="1527796295988" duration="6913000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24535000" />
+    <option name="totallyTimeSpent" value="24680000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
@@ -924,7 +926,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/g/graziano/sampepsserver/model/repository/SessionRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
-          <caret line="13" column="63" lean-forward="false" selection-start-line="13" selection-start-column="63" selection-end-line="13" selection-end-column="63" />
+          <caret line="13" column="70" lean-forward="false" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="70" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -933,8 +935,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/g/graziano/sampepsserver/service/FamilyService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="796">
-          <caret line="121" column="86" lean-forward="false" selection-start-line="121" selection-start-column="86" selection-end-line="121" selection-end-column="86" />
+        <state relative-caret-position="768">
+          <caret line="121" column="90" lean-forward="false" selection-start-line="121" selection-start-column="90" selection-end-line="121" selection-end-column="90" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2533#2534#0" expanded="true" />
