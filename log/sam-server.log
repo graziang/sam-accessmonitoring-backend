@@ -222,3 +222,43 @@ Consider the following:
 2018-05-31 14:35:41.603  INFO 30324 --- [Thread-10] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
 2018-05-31 14:35:41.603  INFO 30324 --- [Thread-10] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2018-05-31 14:35:41.604  INFO 30324 --- [Thread-10] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed drop of schema as part of SessionFactory shut-down'
+2018-05-31 15:15:31.930  INFO 22272 --- [main] g.g.s.SamPepsServerApplication           : Starting SamPepsServerApplication on admin-PC1 with PID 22272 (C:\Users\ggraziano\code\sam-peps-server\target\classes started by ggraziano in C:\Users\ggraziano\code\sam-peps-server)
+2018-05-31 15:15:31.934  INFO 22272 --- [main] g.g.s.SamPepsServerApplication           : No active profile set, falling back to default profiles: default
+2018-05-31 15:15:32.002  INFO 22272 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1526c05: startup date [Thu May 31 15:15:32 CEST 2018]; root of context hierarchy
+2018-05-31 15:15:33.544  INFO 22272 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$cd0797a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-05-31 15:15:33.944  INFO 22272 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8086 (http)
+2018-05-31 15:15:33.970  INFO 22272 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-05-31 15:15:33.971  INFO 22272 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-05-31 15:15:33.977  INFO 22272 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files (x86)\Java\jdk1.8.0_131\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Docker\Docker\Resources\bin;C:\ProgramData\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\Program Files\Docker\Docker\Resources\bin;C:\ProgramData\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\Program Files\Docker\Docker\Resources\bin;C:\ProgramData\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\WINDOWS\System32;C:\Program Files\Apache\apache-ant-1.10.1\bin;C:\Program Files\Java\jdk1.8.0_131\bin;C:\Program Files\Apache\maven\bin;C:\Users\ggraziano\AppData\Local\Microsoft\WindowsApps;C:\Users\ggraziano\.jpm\windows\bin;C:\Users\ggraziano\AppData\Roaming\npm;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\MongoDB\Server\3.4\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Tesseract-OCR;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Yarn\bin\;C:\ProgramData\chocolatey\bin;;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Apache\apache-ant-1.10.1\bin;C:\Program Files\Java\jdk1.8.0_131\bin;C:\Program Files\Apache\maven\bin;C:\Users\ggraziano\AppData\Local\Microsoft\WindowsApps;C:\Users\ggraziano\.jpm\windows\bin;C:\Users\ggraziano\AppData\Roaming\npm;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\MongoDB\Server\3.4\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Tesseract-OCR;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Yarn\bin\;C:\ProgramData\chocolatey\bin;;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Apache\apache-ant-1.10.1\bin;C:\Program Files\Java\jdk1.8.0_131\bin;C:\Program Files\Apache\maven\bin;C:\Users\ggraziano\AppData\Local\Microsoft\WindowsApps;C:\Users\ggraziano\.jpm\windows\bin;C:\Users\ggraziano\AppData\Roaming\npm;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\MongoDB\Server\3.4\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Tesseract-OCR;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Yarn\bin\;C:\ProgramData\chocolatey\bin;;C:\WINDOWS\System32\OpenSSH\;C:\Users\ggraziano\AppData\Local\Microsoft\WindowsApps;C:\Users\ggraziano\.jpm\windows\bin;C:\Program Files\Java\jdk1.8.0_131\bin;C:\Program Files\Heroku\bin;C:\Users\ggraziano\AppData\Roaming\npm;C:\Users\ggraziano\AppData\Local\Yarn\bin;;.]
+2018-05-31 15:15:34.118  INFO 22272 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-05-31 15:15:34.119  INFO 22272 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2117 ms
+2018-05-31 15:15:34.327  INFO 22272 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-05-31 15:15:34.328  INFO 22272 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-05-31 15:15:34.329  INFO 22272 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-05-31 15:15:34.329  INFO 22272 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-05-31 15:15:34.330  INFO 22272 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-05-31 15:15:34.330  INFO 22272 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-05-31 15:15:34.440  WARN 22272 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine suitable jdbc url
+2018-05-31 15:15:34.443  INFO 22272 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2018-05-31 15:15:34.460  INFO 22272 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2018-05-31 15:15:34.467 ERROR 22272 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine suitable jdbc url
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+
