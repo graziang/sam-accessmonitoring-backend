@@ -107,26 +107,11 @@ public class FamilyService {
         }
 
 
-        return this.sessionRepository.findSessionsByChildId(childId);
+        Calendar c = Calendar.getInstance() ;
+        c.add(Calendar.MINUTE,-1);
+        Date date = c.getTime();
+
+        return this.sessionRepository.findByDateAfterAndChildId(date, childId);
     }
-
-    public List<Session> getLastDay(Long childId) throws NotFoundException {
-
-
-        if(!childRepository.existsById(childId)) {
-            String errorMessage = "Child not found: [childId: "  + childId + "]";
-            logger.error(errorMessage);
-            throw new NotFoundException(errorMessage);
-        }
-
-        final long ONE_MINUTE_IN_MILLIS = 60000;//millisecs
-        long curTimeInMs = System.currentTimeMillis();
-        Date afterAddingMins = new Date(curTimeInMs - (2 * ONE_MINUTE_IN_MILLIS));
-
-        logger.error(afterAddingMins.toString());
-
-        return this.sessionRepository.findByDateGreaterThanAndChildId(afterAddingMins, childId);
-    }
-
-
+    
 }
