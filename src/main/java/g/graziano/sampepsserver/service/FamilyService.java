@@ -96,7 +96,6 @@ public class FamilyService {
        return this.sessionRepository.save(session);
     }
 
-    @JsonIgnoreProperties({"child"})
     public List<Session> getSessions(Long childId) throws NotFoundException {
 
 
@@ -108,6 +107,19 @@ public class FamilyService {
 
 
         return this.sessionRepository.findSessionsByChildId(childId);
+    }
+
+    public List<Session> getLastDay(Long childId) throws NotFoundException {
+
+
+        if(!childRepository.existsById(childId)) {
+            String errorMessage = "Child not found: [childId: "  + childId + "]";
+            logger.error(errorMessage);
+            throw new NotFoundException(errorMessage);
+        }
+
+
+        return this.sessionRepository.findSessionsByDateSecondsAfterAndChAndChildId(30, childId);
     }
 
 
