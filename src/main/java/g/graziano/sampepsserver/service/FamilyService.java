@@ -96,7 +96,7 @@ public class FamilyService {
        return this.sessionRepository.save(session);
     }
 
-    @JsonIgnoreProperties(ignoreUnknown=true)
+    @JsonIgnoreProperties({"child"})
     public List<Session> getSessions(Long childId) throws NotFoundException {
 
 
