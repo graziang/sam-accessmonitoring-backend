@@ -28,7 +28,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.httpBasic().and().authorizeRequests()
                 .antMatchers("/", "/home").permitAll()
-                .anyRequest().authenticated().and().csrf().disable().headers().frameOptions().disable();;
+                .anyRequest().authenticated().and().csrf().disable().headers().frameOptions().disable();
     }
 
     @Bean

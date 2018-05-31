@@ -2,6 +2,7 @@ package g.graziano.sampepsserver.model.data;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -24,11 +25,11 @@ public class Family implements Serializable {
 
     private String description;
 
-    @JsonIgnore
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
 
-    @JsonIgnore
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String childrenPassword;
 
     private boolean active;
