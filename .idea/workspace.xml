@@ -119,12 +119,12 @@
       <file leaf-file-name="SecurityConfiguration.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/g/graziano/sampepsserver/configuration/SecurityConfiguration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="29" column="55" lean-forward="false" selection-start-line="29" selection-start-column="55" selection-end-line="29" selection-end-column="55" />
+            <state relative-caret-position="378">
+              <caret line="27" column="81" lean-forward="false" selection-start-line="27" selection-start-column="81" selection-end-line="27" selection-end-column="81" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1747#1748#0" expanded="true" />
-                <element signature="e#1797#1798#0" expanded="true" />
+                <element signature="e#1683#1684#0" expanded="true" />
+                <element signature="e#1733#1734#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -434,12 +434,12 @@
       <option name="presentableId" value="Default" />
       <updated>1527768856017</updated>
       <workItem from="1527768858196" duration="12412000" />
-      <workItem from="1527788183095" duration="1765000" />
+      <workItem from="1527788183095" duration="2021000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14177000" />
+    <option name="totallyTimeSpent" value="14433000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
@@ -572,8 +572,8 @@
           <caret line="29" column="5" lean-forward="false" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1747#1748#0" expanded="true" />
-            <element signature="e#1797#1798#0" expanded="true" />
+            <element signature="e#1683#1684#0" expanded="true" />
+            <element signature="e#1733#1734#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -674,12 +674,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/g/graziano/sampepsserver/configuration/SecurityConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="29" column="55" lean-forward="false" selection-start-line="29" selection-start-column="55" selection-end-line="29" selection-end-column="55" />
+        <state relative-caret-position="378">
+          <caret line="27" column="81" lean-forward="false" selection-start-line="27" selection-start-column="81" selection-end-line="27" selection-end-column="81" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1747#1748#0" expanded="true" />
-            <element signature="e#1797#1798#0" expanded="true" />
+            <element signature="e#1683#1684#0" expanded="true" />
+            <element signature="e#1733#1734#0" expanded="true" />
           </folding>
         </state>
       </provider>
