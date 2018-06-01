@@ -69,7 +69,15 @@ public class FamilyService {
             throw new NotFoundException(errorMessage);
         }
 
-  
+        Family family = familyRepository.findByName(familyName);
+
+        for (Child child: family.getChildren()){
+            List<Session> session = this.sessionRepository.findSessionsByChildId(child.getId());
+            this.sessionRepository.deleteAll(session);
+
+        }
+
+        this.childRepository.deleteAll(family.getChildren());
         this.familyRepository.deleteByName(familyName);
     }
 
