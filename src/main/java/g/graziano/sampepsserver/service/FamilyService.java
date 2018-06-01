@@ -117,6 +117,8 @@ public class FamilyService {
 
         Child child = this.childRepository.findByNameAndFamilyId(family.getName(), id);
 
+        this.sessionRepository.deleteAllByChildId(child.getId());
+
         this.childRepository.deleteByNameAndFamilyId(child.getName(), family.getId());
 
         return child;

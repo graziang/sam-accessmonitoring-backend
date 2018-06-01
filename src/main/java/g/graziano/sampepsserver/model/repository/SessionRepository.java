@@ -14,5 +14,6 @@ public interface SessionRepository extends JpaRepository<Session, Integer> {
 
     List<Session> findByDateAfterAndChildId(Date endDate, Long id);
 
+    void deleteAllByChildId(Long id);
 
 }
