@@ -1,5 +1,7 @@
 package g.graziano.sampepsserver.model.repository;
 
+
+import g.graziano.sampepsserver.model.data.Child;
 import g.graziano.sampepsserver.model.data.Session;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -11,4 +13,5 @@ public interface SessionRepository extends JpaRepository<Session, Integer> {
     List<Session> findSessionsByChildId(Long id);
 
     List<Session> findByDateAfterAndChildId(Date endDate, Long id);
+
 }

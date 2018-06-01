@@ -63,18 +63,25 @@ public class FamilyService {
     public Child createChild(String familyName, Child child) throws NotFoundException {
 
         if(!familyRepository.existsByName(familyName)) {
-            String errorMessage = "Family not found: [name: "  + familyName + "]";
+            String errorMessage = "Family not found: [family_name: "  + familyName + "]";
             logger.error(errorMessage);
             throw new NotFoundException(errorMessage);
         }
 
         Family family = familyRepository.findByName(familyName);
+
+        if(childRepository.existsByName(child.getName(), family.getId())) {
+            String errorMessage = "Child already exist: [child_name: "  + child.getName() + "]";
+            logger.error(errorMessage);
+            throw new NotFoundException(errorMessage);
+        }
+
         family.getChildren().add(child);
         child.setFamily(family);
 
         this.familyRepository.save(family);
 
-        return child;
+        return this.childRepository.findByNameAndFamilyId(child.getName(), family.getId());
     }
 
     public Child getChild(Long childId){
@@ -86,7 +93,7 @@ public class FamilyService {
         Child child = this.childRepository.findById(childID);
 
         if(child == null){
-            String errorMessage = "Child not found: [id: "  + childID + "]";
+            String errorMessage = "Child not found: [child_id: "  + childID + "]";
             logger.error(errorMessage);
             throw new NotFoundException(errorMessage);
         }
@@ -101,7 +108,7 @@ public class FamilyService {
 
 
         if(!childRepository.existsById(childId)) {
-            String errorMessage = "Child not found: [childId: "  + childId + "]";
+            String errorMessage = "Child not found: [child_id: "  + childId + "]";
             logger.error(errorMessage);
             throw new NotFoundException(errorMessage);
         }
