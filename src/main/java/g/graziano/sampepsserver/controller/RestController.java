@@ -80,7 +80,7 @@ public class RestController {
         return new ResponseEntity(newChild, HttpStatus.OK);
     }
 
-    @DeleteMapping("/family")
+    @DeleteMapping("/child")
     public ResponseEntity deleteChild(@RequestParam(value = "child_id", required = true) Long id, @RequestParam(value = "family_name", required = true) String familyName){
 
 

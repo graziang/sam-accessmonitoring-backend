@@ -13,5 +13,5 @@ public interface ChildRepository extends JpaRepository<Child, Integer> {
 
     boolean existsByNameAndFamilyId(String name, Long id);
 
-    Child deleteByNameAndFamilyId(String name, Long io);
+    Child deleteByNameAndFamilyId(String name, Long id);
 }
