@@ -70,7 +70,7 @@ public class FamilyService {
 
         Family family = familyRepository.findByName(familyName);
 
-        if(childRepository.existsByName(child.getName(), family.getId())) {
+        if(childRepository.existsByNameAndFamilyId(child.getName(), family.getId())) {
             String errorMessage = "Child already exist: [child_name: "  + child.getName() + "]";
             logger.error(errorMessage);
             throw new NotFoundException(errorMessage);
