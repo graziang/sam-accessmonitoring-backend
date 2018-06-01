@@ -69,9 +69,7 @@ public class FamilyService {
             throw new NotFoundException(errorMessage);
         }
 
-        Family family = familyRepository.findByName(familyName);
-
-
+  
         this.familyRepository.deleteByName(familyName);
     }
 
