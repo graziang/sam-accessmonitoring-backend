@@ -71,13 +71,7 @@ public class FamilyService {
 
         Family family = familyRepository.findByName(familyName);
 
-        for (Child child: family.getChildren()){
-            List<Session> session = this.sessionRepository.findSessionsByChildId(child.getId());
-            this.sessionRepository.deleteAll(session);
 
-        }
-
-        this.childRepository.deleteAll(family.getChildren());
         this.familyRepository.deleteByName(familyName);
     }
 
@@ -120,7 +114,7 @@ public class FamilyService {
         this.sessionRepository.deleteAllByChildId(child.getId());
 
         this.childRepository.deleteByNameAndFamilyId(child.getName(), family.getId());
-        
+
     }
 
     public Child getChild(Long childId){
