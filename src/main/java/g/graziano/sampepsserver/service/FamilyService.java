@@ -61,7 +61,7 @@ public class FamilyService {
         return this.familyRepository.findByName(familyName);
     }
 
-    public Family deleteFamily(String familyName) throws NotFoundException {
+    public void deleteFamily(String familyName) throws NotFoundException {
 
         if(!familyRepository.existsByName(familyName)) {
             String errorMessage = "Family not found: [family_name: "  + familyName + "]";
@@ -78,7 +78,7 @@ public class FamilyService {
         }
 
         this.childRepository.deleteAll(family.getChildren());
-        return this.familyRepository.deleteByName(familyName);
+        this.familyRepository.deleteByName(familyName);
     }
 
     public Child createChild(String familyName, Child child) throws NotFoundException {
@@ -105,7 +105,7 @@ public class FamilyService {
         return this.childRepository.findByNameAndFamilyId(child.getName(), family.getId());
     }
 
-    public Child deleteChild(String familyName, Long id) throws NotFoundException {
+    public void deleteChild(String familyName, Long id) throws NotFoundException {
 
         if(!familyRepository.existsByName(familyName)) {
             String errorMessage = "Family not found: [family_name: "  + familyName + "]";
@@ -120,8 +120,7 @@ public class FamilyService {
         this.sessionRepository.deleteAllByChildId(child.getId());
 
         this.childRepository.deleteByNameAndFamilyId(child.getName(), family.getId());
-
-        return child;
+        
     }
 
     public Child getChild(Long childId){
