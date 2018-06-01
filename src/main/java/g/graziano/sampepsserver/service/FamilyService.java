@@ -56,8 +56,29 @@ public class FamilyService {
         return this.familyRepository.save(family);
     }
 
+
     public Family getFamily(String familyName){
         return this.familyRepository.findByName(familyName);
+    }
+
+    public Family deleteFamily(String familyName) throws NotFoundException {
+
+        if(!familyRepository.existsByName(familyName)) {
+            String errorMessage = "Family not found: [family_name: "  + familyName + "]";
+            logger.error(errorMessage);
+            throw new NotFoundException(errorMessage);
+        }
+
+        Family family = familyRepository.findByName(familyName);
+
+        for (Child child: family.getChildren()){
+            List<Session> session = this.sessionRepository.findSessionsByChildId(child.getId());
+            this.sessionRepository.deleteAll(session);
+
+        }
+
+        this.childRepository.deleteAll(family.getChildren());
+        return this.familyRepository.deleteByName(familyName);
     }
 
     public Child createChild(String familyName, Child child) throws NotFoundException {
@@ -82,6 +103,23 @@ public class FamilyService {
         this.familyRepository.save(family);
 
         return this.childRepository.findByNameAndFamilyId(child.getName(), family.getId());
+    }
+
+    public Child deleteChild(String familyName, Long id) throws NotFoundException {
+
+        if(!familyRepository.existsByName(familyName)) {
+            String errorMessage = "Family not found: [family_name: "  + familyName + "]";
+            logger.error(errorMessage);
+            throw new NotFoundException(errorMessage);
+        }
+
+        Family family = familyRepository.findByName(familyName);
+
+        Child child = this.childRepository.findByNameAndFamilyId(family.getName(), id);
+
+        this.childRepository.deleteByNameAndFamilyId(child.getName(), family.getId());
+
+        return child;
     }
 
     public Child getChild(Long childId){

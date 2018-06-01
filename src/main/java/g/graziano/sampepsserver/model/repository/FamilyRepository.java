@@ -9,4 +9,5 @@ public interface FamilyRepository extends JpaRepository<Family, Integer> {
 
     boolean existsByName(String name);
     Family findByName(String name);
+    Family deleteByName(String name);
 }

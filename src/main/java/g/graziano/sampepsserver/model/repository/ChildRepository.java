@@ -12,4 +12,6 @@ public interface ChildRepository extends JpaRepository<Child, Integer> {
     Child findByNameAndFamilyId(String name, Long id);
 
     boolean existsByNameAndFamilyId(String name, Long id);
+
+    Child deleteByNameAndFamilyId(String name, Long io);
 }

@@ -12,10 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
 import javax.validation.Valid;
@@ -57,6 +54,19 @@ public class RestController {
         return new ResponseEntity(newFamily, HttpStatus.OK);
     }
 
+    @DeleteMapping("/family")
+    public ResponseEntity deleteFamily( @RequestParam(value = "family_name", required = true) String familyName){
+
+
+        try {
+            this.familyService.deleteFamily(familyName);
+        } catch (NotFoundException e) {
+            return this.getError(e.getMessage(), HttpStatus.BAD_REQUEST);
+        }
+
+        return new ResponseEntity(HttpStatus.OK);
+    }
+
     @PostMapping("/child")
     public ResponseEntity createChild(@Valid @RequestParam(value = "family_name", required = true) String familyName, @Valid @RequestBody Child child){
 
@@ -68,6 +78,19 @@ public class RestController {
         }
 
         return new ResponseEntity(newChild, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/family")
+    public ResponseEntity deleteChild(@RequestParam(value = "child_id", required = true) Long id, @RequestParam(value = "family_name", required = true) String familyName){
+
+
+        try {
+            this.familyService.deleteChild(familyName, id);
+        } catch (NotFoundException e) {
+            return this.getError(e.getMessage(), HttpStatus.BAD_REQUEST);
+        }
+
+        return new ResponseEntity(HttpStatus.OK);
     }
 
     @GetMapping("/child")
