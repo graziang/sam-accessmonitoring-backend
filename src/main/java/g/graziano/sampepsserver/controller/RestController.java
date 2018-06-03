@@ -81,11 +81,11 @@ public class RestController {
     }
 
     @DeleteMapping("/child")
-    public ResponseEntity deleteChild(@RequestParam(value = "child_id", required = true) Long id, @RequestParam(value = "family_name", required = true) String familyName){
+    public ResponseEntity deleteChild(@RequestParam(value = "child_id", required = true) Long childId, @RequestParam(value = "family_name", required = true) String familyName){
 
 
         try {
-            this.familyService.deleteChild(familyName, id);
+            this.familyService.deleteChild(familyName, childId);
         } catch (NotFoundException e) {
             return this.getError(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
@@ -94,12 +94,12 @@ public class RestController {
     }
 
     @GetMapping("/child")
-    public ResponseEntity getChild( @RequestParam(value = "child_id", required = true) Long childID){
+    public ResponseEntity getChild(@RequestParam(value = "child_id", required = true) String childName, @RequestParam(value = "family_name", required = true) String familyName){
 
-        Child child = familyService.getChild(childID);
+        Child child = familyService.getChild(childName, familyName);
 
         if(child == null){
-            return this.getError("Child not found: [child_id: " + childID + "]", HttpStatus.BAD_REQUEST);
+            return this.getError("Child not found: [child_id: " + childName + "]", HttpStatus.BAD_REQUEST);
         }
         return new ResponseEntity(child, HttpStatus.OK);
     }

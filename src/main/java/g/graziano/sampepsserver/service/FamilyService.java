@@ -131,8 +131,12 @@ public class FamilyService {
 
     }
 
-    public Child getChild(Long childId){
-        return this.childRepository.findById(childId);
+    public Child getChild(String familyName, String childName){
+
+
+        Family family = this.getFamily(familyName);
+
+        return this.childRepository.findByNameAndFamilyId(childName, family.getId());
     }
 
     public Session createSession(Long childID, Session session) throws NotFoundException {
