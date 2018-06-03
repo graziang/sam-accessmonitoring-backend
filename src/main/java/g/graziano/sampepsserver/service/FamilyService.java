@@ -154,10 +154,24 @@ public class FamilyService {
 
     }
 
-    public Child getChild(String familyName, String childName){
+    public Child getChild(String familyName, String childName, String password) throws NotFoundException {
 
 
-        Family family = this.getFamily(familyName);
+        if(!familyRepository.existsByName(familyName)) {
+            String errorMessage = "Family not found: [family_name: "  + familyName + "]";
+            logger.error(errorMessage);
+            throw new NotFoundException(errorMessage);
+        }
+
+
+        Family family = this.familyRepository.findByName(familyName);
+
+        if(!passwordEncoder.matches(password, family.getChildrenPassword())) {
+
+            String errorMessage = "Bad child password: [family_name: "  + familyName + "]";
+            logger.error(errorMessage);
+            throw new NotFoundException(errorMessage);
+        }
 
         return this.childRepository.findByNameAndFamilyId(childName, family.getId());
     }
