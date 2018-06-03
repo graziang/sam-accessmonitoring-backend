@@ -249,4 +249,17 @@ public class FamilyService {
 
     }
 
+    public Family setChildrenPassword(String familyName, String password, String newChildrenPassword) throws NotFoundException {
+
+
+        Family family = this.getFamily(familyName, password);
+
+        family.setChildrenPassword(passwordEncoder.encode(newChildrenPassword));
+
+        this.familyRepository.save(family);
+
+        return family;
+
+    }
+
 }

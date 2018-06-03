@@ -59,6 +59,21 @@ public class RestController {
         return new ResponseEntity(newFamily, HttpStatus.OK);
     }
 
+
+    @PutMapping("/update_children_password")
+    public ResponseEntity updateChildrenPassord(@RequestParam(value = "family_name", required = true) String familyName, @Valid @RequestParam(value = "password", required = true) String password, @Valid @RequestParam(value = "new_children_password", required = true) String newChildrenPassowrd){
+
+
+        Family family = null;
+        try {
+            family = familyService.setChildrenPassword(familyName, password, newChildrenPassowrd);
+        } catch (NotFoundException e) {
+            return this.getError(e.getMessage(), HttpStatus.BAD_REQUEST);
+        }
+
+        return new ResponseEntity(family, HttpStatus.OK);
+    }
+
     @PutMapping("/active_family")
     public ResponseEntity updateFamilyStatus(@RequestParam(value = "family_name", required = true) String familyName, @Valid @RequestParam(value = "password", required = true) String password, @Valid @RequestParam(value = "active", required = true) boolean active){
 
