@@ -68,11 +68,11 @@ public class RestController {
     }
 
     @PostMapping("/child")
-    public ResponseEntity createChild(@Valid @RequestParam(value = "family_name", required = true) String familyName, @Valid @RequestBody Child child){
+    public ResponseEntity createChild(@Valid @RequestParam(value = "family_name", required = true) String familyName, @Valid @RequestParam(value = "password", required = true) String password, @Valid @RequestBody Child child){
 
         Child newChild = null;
         try {
-            newChild = familyService.createChild(familyName, child);
+            newChild = familyService.createChild(familyName, child, password);
         } catch (NotFoundException e) {
             return this.getError(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
