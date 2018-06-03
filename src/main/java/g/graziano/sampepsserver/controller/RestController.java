@@ -129,7 +129,7 @@ public class RestController {
 
         Child child = null;
         try {
-            child = familyService.getChild(childName, familyName, password);
+            child = familyService.getChild(familyName, childName, password);
         } catch (NotFoundException e) {
             return this.getError(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
