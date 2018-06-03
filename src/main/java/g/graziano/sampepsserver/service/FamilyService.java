@@ -73,10 +73,12 @@ public class FamilyService {
         }
 
 
+        family = this.familyRepository.findByName(familyName);
 
         //family = this.familyRepository.findByNameAndPassword(familyName, passwordEncoder.encode(password));
         logger.error("pepssss" + family.toString());
         logger.error("pepssss" + password);
+        logger.error("pepssss" + passwordEncoder.encode(password));
 
 
         if(family == null) {
