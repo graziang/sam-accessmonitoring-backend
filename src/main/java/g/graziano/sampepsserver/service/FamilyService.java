@@ -74,12 +74,11 @@ public class FamilyService {
 
 
         family = this.familyRepository.findByName(familyName);
-        if(passwordEncoder.matches(password, family.getPassword())) {
+        if(!passwordEncoder.matches(password, family.getPassword())) {
             String errorMessage = "Bad family password: [family_name: "  + familyName + "]";
             logger.error(errorMessage);
             throw new NotFoundException(errorMessage);
         }
-
 
         return family;
 
