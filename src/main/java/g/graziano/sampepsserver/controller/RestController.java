@@ -127,11 +127,13 @@ public class RestController {
     @GetMapping("/child")
     public ResponseEntity getChild(@RequestParam(value = "child_name", required = true) String childName, @RequestParam(value = "family_name", required = true) String familyName, @Valid @RequestParam(value = "password", required = true) String password){
 
-        Child child = familyService.getChild(childName, familyName, password);
-
-        if(child == null){
-            return this.getError("Child not found: [child_id: " + childName + "]", HttpStatus.BAD_REQUEST);
+        Child child = null;
+        try {
+            child = familyService.getChild(childName, familyName, password);
+        } catch (NotFoundException e) {
+            return this.getError(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
+
         return new ResponseEntity(child, HttpStatus.OK);
     }
 
