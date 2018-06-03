@@ -74,7 +74,7 @@ public class FamilyService {
 
 
 
-        family = this.familyRepository.findByNameAndPassword(familyName, passwordEncoder.encode(password));
+        //family = this.familyRepository.findByNameAndPassword(familyName, passwordEncoder.encode(password));
         logger.error("pepssss" + family.toString());
         logger.error("pepssss" + password);
 
