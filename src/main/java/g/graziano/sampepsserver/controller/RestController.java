@@ -59,7 +59,7 @@ public class RestController {
         return new ResponseEntity(newFamily, HttpStatus.OK);
     }
 
-    @PutMapping("/active")
+    @PutMapping("/active_family")
     public ResponseEntity updateFamilyStatus(@RequestParam(value = "family_name", required = true) String familyName, @Valid @RequestParam(value = "password", required = true) String password, @Valid @RequestParam(value = "active", required = true) boolean active){
 
         Family family = null;
@@ -72,7 +72,7 @@ public class RestController {
         return new ResponseEntity(family, HttpStatus.OK);
     }
 
-    @PutMapping("/active")
+    @PutMapping("/active_child")
     public ResponseEntity updateChildStatus(@RequestParam(value = "child_name", required = true) String childName, @RequestParam(value = "family_name", required = true) String familyName, @Valid @RequestParam(value = "password", required = true) String password, @Valid @RequestParam(value = "active", required = true) boolean active){
 
         Child child = null;
