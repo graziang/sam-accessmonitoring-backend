@@ -57,8 +57,34 @@ public class FamilyService {
     }
 
 
-    public Family getFamily(String familyName){
+    public Family getFamily(String familyName) {
         return this.familyRepository.findByName(familyName);
+    }
+
+    public Family getFamily(String familyName, String password) throws NotFoundException {
+
+
+        Family family = null;
+
+        if(!familyRepository.existsByName(familyName)) {
+            String errorMessage = "Family not found: [family_name: "  + familyName + "]";
+            logger.error(errorMessage);
+            throw new NotFoundException(errorMessage);
+        }
+
+
+        family = this.familyRepository.findByNameAndPassword(familyName, passwordEncoder.encode(password));
+
+
+        if(family == null) {
+            String errorMessage = "Bad family password: [family_name: "  + familyName + "]";
+            logger.error(errorMessage);
+            throw new NotFoundException(errorMessage);
+        }
+
+
+        return family;
+
     }
 
     public void deleteFamily(String familyName) throws NotFoundException {
@@ -89,15 +115,13 @@ public class FamilyService {
             throw new NotFoundException(errorMessage);
         }
 
-        Family family = familyRepository.findByName(familyName);
+        Family family = this.familyRepository.findByNameAndChildrenPassword(familyName, passwordEncoder.encode(password));
 
-
-        if(!family.getChildrenPassword().equals(passwordEncoder.encode(password))) {
-            String errorMessage = "Bad family password: [family_name: "  + familyName + "]";
+        if(family == null) {
+            String errorMessage = "Bad child password: [family_name: "  + familyName + "]";
             logger.error(errorMessage);
             throw new NotFoundException(errorMessage);
         }
-
 
         if(childRepository.existsByNameAndFamilyId(child.getName(), family.getId())) {
             String errorMessage = "Child already exist: [child_name: "  + child.getName() + "]";

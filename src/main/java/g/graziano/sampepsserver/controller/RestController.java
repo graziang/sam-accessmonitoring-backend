@@ -30,9 +30,14 @@ public class RestController {
 
 
     @GetMapping("/family")
-    public ResponseEntity getFamily( @RequestParam(value = "family_name", required = true) String familyName){
+    public ResponseEntity getFamily( @RequestParam(value = "family_name", required = true) String familyName, @Valid @RequestParam(value = "password", required = true) String password){
 
-        Family family = familyService.getFamily(familyName);
+        Family family = null;
+        try {
+            family = familyService.getFamily(familyName, password);
+        } catch (NotFoundException e) {
+            return this.getError(e.getMessage(), HttpStatus.BAD_REQUEST);
+        }
 
         if(family == null){
             return this.getError("Family not found: [family_name: " + familyName + "]", HttpStatus.BAD_REQUEST);
@@ -94,7 +99,7 @@ public class RestController {
     }
 
     @GetMapping("/child")
-    public ResponseEntity getChild(@RequestParam(value = "child_id", required = true) String childName, @RequestParam(value = "family_name", required = true) String familyName){
+    public ResponseEntity getChild(@RequestParam(value = "child_name", required = true) String childName, @RequestParam(value = "family_name", required = true) String familyName){
 
         Child child = familyService.getChild(childName, familyName);
 

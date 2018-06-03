@@ -13,4 +13,8 @@ public interface FamilyRepository extends JpaRepository<Family, Integer> {
 
     @Transactional
     void deleteByName(String name);
+
+    Family findByNameAndPassword(String name, String password);
+
+    Family findByNameAndChildrenPassword(String name, String password);
 }
