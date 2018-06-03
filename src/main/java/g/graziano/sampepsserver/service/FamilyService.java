@@ -74,14 +74,7 @@ public class FamilyService {
 
 
         family = this.familyRepository.findByName(familyName);
-
-        //family = this.familyRepository.findByNameAndPassword(familyName, passwordEncoder.encode(password));
-        logger.error("familoi" + family.getPassword());
-        logger.error("param" + password);
-        logger.error("pepssss" + passwordEncoder.encode(password));
-
-
-        if(family == null) {
+        if(passwordEncoder.matches(password, family.getPassword())) {
             String errorMessage = "Bad family password: [family_name: "  + familyName + "]";
             logger.error(errorMessage);
             throw new NotFoundException(errorMessage);
@@ -120,9 +113,11 @@ public class FamilyService {
             throw new NotFoundException(errorMessage);
         }
 
-        Family family = this.familyRepository.findByNameAndChildrenPassword(familyName, passwordEncoder.encode(password));
 
-        if(family == null) {
+        Family family = this.familyRepository.findByName(familyName);
+
+        if(!passwordEncoder.matches(password, family.getChildrenPassword())) {
+
             String errorMessage = "Bad child password: [family_name: "  + familyName + "]";
             logger.error(errorMessage);
             throw new NotFoundException(errorMessage);
