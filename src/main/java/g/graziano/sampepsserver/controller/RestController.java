@@ -59,6 +59,32 @@ public class RestController {
         return new ResponseEntity(newFamily, HttpStatus.OK);
     }
 
+    @PutMapping("/active")
+    public ResponseEntity updateFamilyStatus(@RequestParam(value = "family_name", required = true) String familyName, @Valid @RequestParam(value = "password", required = true) String password, @Valid @RequestParam(value = "active", required = true) boolean active){
+
+        Family family = null;
+        try {
+            family = familyService.setFamilyStatus(familyName, password, active);
+        } catch (NotFoundException e) {
+            return this.getError(e.getMessage(), HttpStatus.BAD_REQUEST);
+        }
+
+        return new ResponseEntity(family, HttpStatus.OK);
+    }
+
+    @PutMapping("/active")
+    public ResponseEntity updateChildStatus(@RequestParam(value = "child_name", required = true) String childName, @RequestParam(value = "family_name", required = true) String familyName, @Valid @RequestParam(value = "password", required = true) String password, @Valid @RequestParam(value = "active", required = true) boolean active){
+
+        Child child = null;
+        try {
+            child = familyService.setChildStatus(familyName, childName, password, active);
+        } catch (NotFoundException e) {
+            return this.getError(e.getMessage(), HttpStatus.BAD_REQUEST);
+        }
+
+        return new ResponseEntity(child, HttpStatus.OK);
+    }
+
     @DeleteMapping("/family")
     public ResponseEntity deleteFamily( @RequestParam(value = "family_name", required = true) String familyName){
 

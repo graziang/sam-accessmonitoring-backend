@@ -193,4 +193,46 @@ public class FamilyService {
         return this.sessionRepository.findByDateAfterAndChildId(oldDate, childId);
     }
 
+    public Family setFamilyStatus(String familyName, String password, boolean status) throws NotFoundException {
+
+
+        Family family = this.getFamily(familyName, password);
+
+        family.setActive(status);
+
+        this.familyRepository.save(family);
+
+        return family;
+
+    }
+
+    public Child setChildStatus(String familyName, String childName, String password, boolean status) throws NotFoundException {
+
+
+        if(!familyRepository.existsByName(familyName)) {
+            String errorMessage = "Family not found: [family_name: "  + familyName + "]";
+            logger.error(errorMessage);
+            throw new NotFoundException(errorMessage);
+        }
+
+
+        Family family = this.familyRepository.findByName(familyName);
+
+        if(!passwordEncoder.matches(password, family.getChildrenPassword())) {
+
+            String errorMessage = "Bad child password: [family_name: "  + familyName + "]";
+            logger.error(errorMessage);
+            throw new NotFoundException(errorMessage);
+        }
+
+        Child child = this.childRepository.findByNameAndFamilyId(childName, family.getId());
+
+        child.setActive(status);
+
+        this.childRepository.save(child);
+
+        return child;
+
+    }
+
 }
