@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -161,7 +162,7 @@ public class RestController {
             return this.getError(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
 
-        return new ResponseEntity(session, HttpStatus.OK);
+        return new ResponseEntity(new ArrayList<>(session), HttpStatus.OK);
     }
 
     @GetMapping("/session")
