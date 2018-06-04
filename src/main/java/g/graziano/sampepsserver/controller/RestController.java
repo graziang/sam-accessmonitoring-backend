@@ -162,7 +162,10 @@ public class RestController {
             return this.getError(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
 
-        return new ResponseEntity(new ArrayList<>(session), HttpStatus.OK);
+        List sessions = new ArrayList();
+        sessions.add(session);
+
+        return new ResponseEntity(sessions, HttpStatus.OK);
     }
 
     @GetMapping("/session")
