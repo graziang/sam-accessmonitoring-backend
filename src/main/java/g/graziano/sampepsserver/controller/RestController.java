@@ -154,10 +154,10 @@ public class RestController {
     }
 
     @PostMapping("/session")
-    public ResponseEntity createSession(@Valid @RequestParam(value = "child_id", required = true) Long childId, @RequestBody Session session){
+    public ResponseEntity createSession(@Valid @RequestParam(value = "family_name", required = true) String familyName, @Valid @RequestParam(value = "child_name", required = true) String childName, @RequestBody Session session){
 
         try {
-            session = this.familyService.createSession(childId, session);
+            session = this.familyService.createSession(familyName, childName, session);
         } catch (NotFoundException e) {
             return this.getError(e.getMessage(), HttpStatus.BAD_REQUEST);
         }

@@ -154,6 +154,21 @@ public class FamilyService {
 
     }
 
+    public Child getChild(String familyName, String childName) throws NotFoundException {
+
+
+        if(!familyRepository.existsByName(familyName)) {
+            String errorMessage = "Family not found: [family_name: "  + familyName + "]";
+            logger.error(errorMessage);
+            throw new NotFoundException(errorMessage);
+        }
+
+
+        Family family = this.familyRepository.findByName(familyName);
+
+        return this.childRepository.findByNameAndFamilyId(childName, family.getId());
+    }
+
     public Child getChild(String familyName, String childName, String password) throws NotFoundException {
 
 
@@ -176,15 +191,9 @@ public class FamilyService {
         return this.childRepository.findByNameAndFamilyId(childName, family.getId());
     }
 
-    public Session createSession(Long childID, Session session) throws NotFoundException {
+    public Session createSession(String familyName, String childName, Session session) throws NotFoundException {
 
-        Child child = this.childRepository.findById(childID);
-
-        if(child == null){
-            String errorMessage = "Child not found: [child_id: "  + childID + "]";
-            logger.error(errorMessage);
-            throw new NotFoundException(errorMessage);
-        }
+        Child child = this.getChild(familyName, childName);
 
         session.setDate(new Date());
         session.setChild(child);
