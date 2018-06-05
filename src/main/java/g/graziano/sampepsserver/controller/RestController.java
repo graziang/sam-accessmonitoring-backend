@@ -10,6 +10,7 @@ import g.graziano.sampepsserver.service.FamilyService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -26,6 +27,7 @@ public class RestController {
 
     private static final Logger logger = LoggerFactory.getLogger(RestController.class);
 
+
     @Autowired
     FamilyService familyService;
 
@@ -37,11 +39,11 @@ public class RestController {
         try {
             family = familyService.getFamily(familyName, password);
         } catch (NotFoundException e) {
-            return this.getError(e.getMessage(), HttpStatus.BAD_REQUEST);
+            return this.getError(e.getMessage(), HttpStatus.BAD_REQUEST, Family.class.getName());
         }
 
         if(family == null){
-            return this.getError("Family not found: [family_name: " + familyName + "]", HttpStatus.BAD_REQUEST);
+            return this.getError("Family not found: [family_name: " + familyName + "]", HttpStatus.BAD_REQUEST, Family.class.getName());
         }
         return new ResponseEntity(family, HttpStatus.OK);
     }
@@ -53,7 +55,7 @@ public class RestController {
         try {
             newFamily = familyService.createFamily(family);
         } catch (NotFoundException e) {
-            return this.getError(e.getMessage(), HttpStatus.BAD_REQUEST);
+            return this.getError(e.getMessage(), HttpStatus.BAD_REQUEST, Family.class.getName());
         }
 
 
@@ -69,7 +71,7 @@ public class RestController {
         try {
             family = familyService.setChildrenPassword(familyName, password, newChildrenPassowrd);
         } catch (NotFoundException e) {
-            return this.getError(e.getMessage(), HttpStatus.BAD_REQUEST);
+            return this.getError(e.getMessage(), HttpStatus.BAD_REQUEST, Family.class.getName());
         }
 
         return new ResponseEntity(family, HttpStatus.OK);
@@ -82,7 +84,7 @@ public class RestController {
         try {
             family = familyService.setFamilyStatus(familyName, password, active);
         } catch (NotFoundException e) {
-            return this.getError(e.getMessage(), HttpStatus.BAD_REQUEST);
+            return this.getError(e.getMessage(), HttpStatus.BAD_REQUEST, Family.class.getName());
         }
 
         return new ResponseEntity(family, HttpStatus.OK);
@@ -95,7 +97,7 @@ public class RestController {
         try {
             child = familyService.setChildStatus(familyName, childName, password, active);
         } catch (NotFoundException e) {
-            return this.getError(e.getMessage(), HttpStatus.BAD_REQUEST);
+            return this.getError(e.getMessage(), HttpStatus.BAD_REQUEST, Child.class.getName());
         }
 
         return new ResponseEntity(child, HttpStatus.OK);
@@ -108,7 +110,7 @@ public class RestController {
         try {
             this.familyService.deleteFamily(familyName);
         } catch (NotFoundException e) {
-            return this.getError(e.getMessage(), HttpStatus.BAD_REQUEST);
+            return this.getError(e.getMessage(), HttpStatus.BAD_REQUEST, Family.class.getName());
         }
 
         return new ResponseEntity(HttpStatus.OK);
@@ -121,7 +123,7 @@ public class RestController {
         try {
             newChild = familyService.createChild(familyName, child, password);
         } catch (NotFoundException e) {
-            return this.getError(e.getMessage(), HttpStatus.BAD_REQUEST);
+            return this.getError(e.getMessage(), HttpStatus.BAD_REQUEST, Child.class.getName());
         }
 
         return new ResponseEntity(newChild, HttpStatus.OK);
@@ -134,7 +136,7 @@ public class RestController {
         try {
             this.familyService.deleteChild(familyName, childId);
         } catch (NotFoundException e) {
-            return this.getError(e.getMessage(), HttpStatus.BAD_REQUEST);
+            return this.getError(e.getMessage(), HttpStatus.BAD_REQUEST, Child.class.getName());
         }
 
         return new ResponseEntity(HttpStatus.OK);
@@ -147,7 +149,7 @@ public class RestController {
         try {
             child = familyService.getChild(familyName, childName, password);
         } catch (NotFoundException e) {
-            return this.getError(e.getMessage(), HttpStatus.BAD_REQUEST);
+            return this.getError(e.getMessage(), HttpStatus.BAD_REQUEST, Child.class.getName());
         }
 
         return new ResponseEntity(child, HttpStatus.OK);
@@ -159,7 +161,7 @@ public class RestController {
         try {
             session = this.familyService.createSession(familyName, childName, session);
         } catch (NotFoundException e) {
-            return this.getError(e.getMessage(), HttpStatus.BAD_REQUEST);
+            return this.getError(e.getMessage(), HttpStatus.BAD_REQUEST, Session.class.getName());
         }
 
         List sessions = new ArrayList();
@@ -175,15 +177,18 @@ public class RestController {
         try {
             sessions = this.familyService.getSessions(childId);
         } catch (NotFoundException e) {
-            return this.getError(e.getMessage(), HttpStatus.BAD_REQUEST);
+            return this.getError(e.getMessage(), HttpStatus.BAD_REQUEST, Session.class.getName());
         }
-
         return new ResponseEntity(sessions, HttpStatus.OK);
     }
 
 
 
-    public ResponseEntity getError(String error, HttpStatus status){
+    public ResponseEntity getError(String error, HttpStatus status, String objecType){
+
+        HttpHeaders responseHeaders = new HttpHeaders();
+        responseHeaders.set("className", objecType);
+
         Map responsError = new HashMap();
         responsError.put("error", error);
         return new ResponseEntity<>(responsError, status);
