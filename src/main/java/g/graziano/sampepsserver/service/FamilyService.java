@@ -244,24 +244,8 @@ public class FamilyService {
     public Child setChildStatus(String familyName, String childName, String password, boolean status) throws NotFoundException {
 
 
-        if(!familyRepository.existsByName(familyName)) {
-            String errorMessage = "Family not found: [family_name: "  + familyName + "]";
-            logger.error(errorMessage);
-            throw new NotFoundException(errorMessage);
-        }
 
-
-        Family family = this.familyRepository.findByName(familyName);
-
-        if(!passwordEncoder.matches(password, family.getChildrenPassword())) {
-
-            String errorMessage = "Bad child password: [family_name: "  + familyName + "]";
-            logger.error(errorMessage);
-            throw new NotFoundException(errorMessage);
-        }
-
-        Child child = this.childRepository.findByNameAndFamilyId(childName, family.getId());
-
+        Child child = this.getChild(familyName, childName, password);
         child.setActive(status);
 
         this.childRepository.save(child);
