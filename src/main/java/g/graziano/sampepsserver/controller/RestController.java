@@ -191,6 +191,6 @@ public class RestController {
 
         Map responsError = new HashMap();
         responsError.put("error", error);
-        return new ResponseEntity<>(responsError, status);
+        return new ResponseEntity<>(responsError, responseHeaders, status);
     }
 }
