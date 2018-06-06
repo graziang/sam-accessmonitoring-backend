@@ -211,7 +211,7 @@ public class FamilyService {
         session.setDate(new Date());
         session.setChild(child);
 
-        this.sessionRepository.deleteAll();
+        this.sessionRepository.deleteAllByChildId(child.getId());
 
        return this.sessionRepository.save(session);
     }
