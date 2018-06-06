@@ -80,6 +80,10 @@ public class FamilyService {
             throw new NotFoundException(errorMessage);
         }
 
+        for (Child child: family.getChildren()){
+            child.setLastSession(this.sessionRepository.findTopByChildIdOrderByDateDesc(child.getId()));
+        }
+
         return family;
 
     }
@@ -164,6 +168,7 @@ public class FamilyService {
         }
 
         Family family = this.familyRepository.findByName(familyName);
+
 
 
         if(!childRepository.existsByNameAndFamilyId(childName, family.getId())){

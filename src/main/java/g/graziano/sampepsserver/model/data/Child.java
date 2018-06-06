@@ -28,6 +28,7 @@ public class Child {
     @JsonIgnore
     private Set<Session> sessions = new HashSet<>();
 
+    private Session lastSession;
 
     public Child(){
 
@@ -79,5 +80,13 @@ public class Child {
 
     public void setSessions(Set<Session> sessions) {
         this.sessions = sessions;
+    }
+
+    public Session getLastSession() {
+        return lastSession;
+    }
+
+    public void setLastSession(Session lastSession) {
+        this.lastSession = lastSession;
     }
 }
