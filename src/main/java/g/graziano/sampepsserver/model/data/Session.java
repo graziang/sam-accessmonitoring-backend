@@ -1,5 +1,7 @@
 package g.graziano.sampepsserver.model.data;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
@@ -23,6 +25,7 @@ public class Session implements Serializable {
 
     private Double longitude;
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "child_id")
     private Child child;
