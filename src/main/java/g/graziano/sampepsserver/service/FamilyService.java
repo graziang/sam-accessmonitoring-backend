@@ -133,7 +133,7 @@ public class FamilyService {
 
         this.familyRepository.save(family);
 
-        return this.childRepository.findByNameAndFamilyId(child.getName(), family.getId());
+        return this.childRepository.findByNameAndFamilyIdOrderByNameAsc(child.getName(), family.getId());
     }
 
     public void deleteChild(String familyName, Long id) throws NotFoundException {
@@ -146,7 +146,7 @@ public class FamilyService {
 
         Family family = familyRepository.findByName(familyName);
 
-        Child child = this.childRepository.findByNameAndFamilyId(family.getName(), id);
+        Child child = this.childRepository.findByNameAndFamilyIdOrderByNameAsc(family.getName(), id);
 
         this.sessionRepository.deleteAllByChildId(child.getId());
 
@@ -172,7 +172,7 @@ public class FamilyService {
             throw new NotFoundException(errorMessage);
         }
 
-        return this.childRepository.findByNameAndFamilyId(childName, family.getId());
+        return this.childRepository.findByNameAndFamilyIdOrderByNameAsc(childName, family.getId());
     }
 
     public Child getChild(String familyName, String childName, String password) throws NotFoundException {
@@ -200,7 +200,7 @@ public class FamilyService {
             throw new NotFoundException(errorMessage);
         }
 
-        return this.childRepository.findByNameAndFamilyId(childName, family.getId());
+        return this.childRepository.findByNameAndFamilyIdOrderByNameAsc(childName, family.getId());
     }
 
     public Session createSession(String familyName, String childName, Session session) throws NotFoundException {

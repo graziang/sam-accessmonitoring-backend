@@ -11,7 +11,7 @@ public interface ChildRepository extends JpaRepository<Child, Integer> {
     boolean existsById(Long id);
 
 
-    Child findByNameAndFamilyId(String name, Long id);
+    Child findByNameAndFamilyIdOrderByNameAsc(String name, Long id);
 
     boolean existsByNameAndFamilyId(String name, Long id);
 
