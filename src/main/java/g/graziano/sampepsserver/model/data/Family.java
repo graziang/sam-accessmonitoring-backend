@@ -33,6 +33,7 @@ public class Family implements Serializable {
     private boolean active;
 
     @OneToMany(mappedBy = "family", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OrderBy("child.name")
     private Set<Child> children = new HashSet<>();
 
 
