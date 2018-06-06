@@ -81,7 +81,7 @@ public class FamilyService {
         }
 
         for (Child child: family.getChildren()){
-            child.setLastSession(this.sessionRepository.findTopByChildIdOrderByDateDesc(child.getId()));
+           // child.setLastSession(this.sessionRepository.findTopByChildIdOrderByDateDesc(child.getId()));
         }
 
         return family;
