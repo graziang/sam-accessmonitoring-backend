@@ -29,7 +29,7 @@ public class Child {
     @JsonIgnore
     private Set<Session> sessions = new HashSet<>();
 
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @Column(insertable = false, updatable = false)
     private Session lastSession;
 
     public Child(){
