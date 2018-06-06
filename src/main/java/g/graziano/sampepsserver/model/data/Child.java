@@ -1,6 +1,7 @@
 package g.graziano.sampepsserver.model.data;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -28,6 +29,7 @@ public class Child {
     @JsonIgnore
     private Set<Session> sessions = new HashSet<>();
 
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Session lastSession;
 
     public Child(){
