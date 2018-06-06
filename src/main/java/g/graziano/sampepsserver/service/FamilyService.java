@@ -80,10 +80,6 @@ public class FamilyService {
             throw new NotFoundException(errorMessage);
         }
 
-        for (Child child: family.getChildren()){
-            child.setLastSession(this.sessionRepository.findTopByChildIdOrderByDateDesc(child.getId()));
-        }
-
         return family;
 
     }
@@ -214,6 +210,8 @@ public class FamilyService {
 
         session.setDate(new Date());
         session.setChild(child);
+
+        
 
        return this.sessionRepository.save(session);
     }

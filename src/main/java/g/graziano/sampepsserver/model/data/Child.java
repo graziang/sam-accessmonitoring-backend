@@ -1,7 +1,6 @@
 package g.graziano.sampepsserver.model.data;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -26,11 +25,8 @@ public class Child {
     private Family family;
 
     @OneToMany(mappedBy = "child", cascade = CascadeType.ALL,  fetch = FetchType.LAZY)
-    @JsonIgnore
     private Set<Session> sessions = new HashSet<>();
 
-    @Column(insertable = false, updatable = false)
-    private Session lastSession;
 
     public Child(){
 
@@ -82,13 +78,5 @@ public class Child {
 
     public void setSessions(Set<Session> sessions) {
         this.sessions = sessions;
-    }
-
-    public Session getLastSession() {
-        return lastSession;
-    }
-
-    public void setLastSession(Session lastSession) {
-        this.lastSession = lastSession;
     }
 }
