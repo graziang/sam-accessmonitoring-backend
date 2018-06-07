@@ -21,9 +21,8 @@ public class Session implements Serializable {
     private Date date;
 
     private Double latitude;
-
-
     private Double longitude;
+    private String addressString;
 
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
@@ -60,6 +59,14 @@ public class Session implements Serializable {
 
     public void setLongitude(Double longitude) {
         this.longitude = longitude;
+    }
+
+    public String getAddressString() {
+        return addressString;
+    }
+
+    public void setAddressString(String addressString) {
+        this.addressString = addressString;
     }
 
     public Child getChild() {
