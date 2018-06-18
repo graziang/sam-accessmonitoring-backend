@@ -54,7 +54,9 @@ public class AndroidNotificationsService {
         String title = child.getName() + " update status";
 
         notification.put("title", title);
-        notification.put("body", "Last location: " + child.getSessions().iterator().next().getAddressString());
+        if(child.getSessions() != null && child.getSessions().iterator().hasNext()) {
+            notification.put("body", "Last location: " + child.getSessions().iterator().next().getAddressString());
+        }
 
 
         body.put("notification", notification);
