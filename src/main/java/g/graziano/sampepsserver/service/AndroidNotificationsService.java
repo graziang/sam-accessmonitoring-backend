@@ -1,17 +1,15 @@
 package g.graziano.sampepsserver.service;
 
 
-import com.oracle.javafx.jmx.json.JSONException;
 import g.graziano.sampepsserver.HeaderRequestInterceptor;
 import g.graziano.sampepsserver.model.data.Child;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.http.client.ClientHttpRequestInterceptor;
+
 import java.util.ArrayList;
 
 import org.json.JSONObject;
