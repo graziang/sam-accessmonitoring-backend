@@ -40,7 +40,7 @@ public class AndroidNotificationsService {
 
         Object firebaseResponse = restTemplate.postForObject(FIREBASE_API_URL, entity, String.class);
 
-        logger.error(firebaseResponse.toString());
+        // logger.error(firebaseResponse.toString());
     }
 
     public void send(Child child) {
@@ -51,7 +51,7 @@ public class AndroidNotificationsService {
 
         JSONObject notification = new JSONObject();
 
-        String title = child.getName() + " update status";
+        String title = child.getName() + "'s status updated";
 
         notification.put("title", title);
         if(child.getSessions() != null && child.getSessions().iterator().hasNext()) {
