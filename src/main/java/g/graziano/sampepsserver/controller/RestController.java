@@ -6,6 +6,7 @@ import g.graziano.sampepsserver.model.data.Child;
 import g.graziano.sampepsserver.model.data.Family;
 import g.graziano.sampepsserver.model.data.Session;
 import g.graziano.sampepsserver.model.repository.FamilyRepository;
+import g.graziano.sampepsserver.service.AndroidNotificationsService;
 import g.graziano.sampepsserver.service.FamilyService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,6 +31,9 @@ public class RestController {
 
     @Autowired
     FamilyService familyService;
+
+    @Autowired
+    AndroidNotificationsService androidNotificationsService;
 
 
     @GetMapping("/family")
@@ -166,6 +170,11 @@ public class RestController {
 
         List sessions = new ArrayList();
         sessions.add(session);
+
+        try {
+            androidNotificationsService.send(familyService.getChild(familyName, childName));
+        } catch (NotFoundException e) {
+        }
 
         return new ResponseEntity(sessions, HttpStatus.OK);
     }
