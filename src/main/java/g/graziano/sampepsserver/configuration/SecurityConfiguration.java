@@ -22,8 +22,6 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 
-
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.httpBasic().and().authorizeRequests()
@@ -35,7 +33,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
 
 
 }

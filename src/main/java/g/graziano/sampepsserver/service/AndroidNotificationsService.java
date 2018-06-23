@@ -5,6 +5,7 @@ import g.graziano.sampepsserver.HeaderRequestInterceptor;
 import g.graziano.sampepsserver.model.data.Child;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.stereotype.Service;
@@ -20,9 +21,11 @@ public class AndroidNotificationsService {
 
     private static final Logger logger = LoggerFactory.getLogger(AndroidNotificationsService.class);
 
-    private static final String FIREBASE_SERVER_KEY = "AAAAhFuLSOs:APA91bHR5crCxhHOv041KoLjchGAMSpWeCkU4iR_-eZdmxMdHHmt_x1QNPx7oQB2ycC9hoqXpQvWCDSSVwoOXOHmm6bJdLEglc4HnOdZOLvxR4DHZ0dgVHB8Ec7tuJD4cp6An_47YxuX";
-    private static final String FIREBASE_API_URL = "https://fcm.googleapis.com/fcm/send";
+    @Value("${firebase.server.key}")
+    private String FIREBASE_SERVER_KEY;
 
+    @Value("${firebase.server.url}")
+    private String FIREBASE_API_URL;
 
     private void send(HttpEntity<String> entity) {
 
@@ -38,9 +41,8 @@ public class AndroidNotificationsService {
         interceptors.add(new HeaderRequestInterceptor("Content-Type", "application/json"));
         restTemplate.setInterceptors(interceptors);
 
-        Object firebaseResponse = restTemplate.postForObject(FIREBASE_API_URL, entity, String.class);
+        restTemplate.postForObject(FIREBASE_API_URL, entity, String.class);
 
-        // logger.error(firebaseResponse.toString());
     }
 
     public void send(Child child) {
@@ -56,9 +58,7 @@ public class AndroidNotificationsService {
             notification.put("body", "Last location: " + child.getSessions().iterator().next().getAddressString());
         }
 
-
         body.put("notification", notification);
-
 
         HttpEntity<String> request = new HttpEntity<>(body.toString());
 
