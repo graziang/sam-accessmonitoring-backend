@@ -50,9 +50,7 @@ public class AndroidNotificationsService {
         body.put("priority", "high");
 
         JSONObject notification = new JSONObject();
-
         String title = child.getName() + "'s status updated";
-
         notification.put("title", title);
         if(child.getSessions() != null && child.getSessions().iterator().hasNext()) {
             notification.put("body", "Last location: " + child.getSessions().iterator().next().getAddressString());
