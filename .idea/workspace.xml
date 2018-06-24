@@ -41,8 +41,8 @@
       <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="360">
+              <caret line="24" column="174" lean-forward="false" selection-start-line="24" selection-start-column="75" selection-end-line="24" selection-end-column="174" />
               <folding />
             </state>
           </provider>
@@ -63,12 +63,12 @@
       <file leaf-file-name="AndroidNotificationsService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/g/graziano/sampepsserver/service/AndroidNotificationsService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="61" column="72" lean-forward="false" selection-start-line="61" selection-start-column="72" selection-end-line="61" selection-end-column="72" />
+            <state relative-caret-position="163">
+              <caret line="52" column="12" lean-forward="false" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1351#1375#1" expanded="true" />
-                <element signature="e#1429#1453#1" expanded="true" />
+                <element signature="e#1323#1347#1" expanded="true" />
+                <element signature="e#1401#1425#1" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -77,7 +77,7 @@
       <file leaf-file-name="google-services.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/google-services.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
+            <state relative-caret-position="72">
               <caret line="20" column="8" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
               <folding />
             </state>
@@ -100,28 +100,6 @@
             <state relative-caret-position="150">
               <caret line="31" column="13" lean-forward="false" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Notification.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/com/google/firebase/firebase-admin/6.2.0/firebase-admin-6.2.0-sources.jar!/com/google/firebase/messaging/Notification.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HeaderRequestInterceptor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/g/graziano/sampepsserver/HeaderRequestInterceptor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -161,6 +139,7 @@
       <find>Message</find>
       <find>tim</find>
       <find>send</find>
+      <find>eZdmxMdHHmt_x1QNPx7oQB2ycC9hoqXpQvWCDSSVwoOXOHmm6bJdLEglc4HnOdZOLvxR4DHZ0dgVHB8Ec7tuJD4cp6An_47YxuX</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -470,12 +449,12 @@
       <workItem from="1529766758803" duration="140000" />
       <workItem from="1529768689920" duration="401000" />
       <workItem from="1529831933167" duration="11000" />
-      <workItem from="1529834453830" duration="4069000" />
+      <workItem from="1529834453830" duration="4731000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63506000" />
+    <option name="totallyTimeSpent" value="64168000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1920" height="1012" extended-state="6" />
@@ -528,27 +507,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/g/graziano/sampepsserver/model/repository/SessionRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="12" column="43" lean-forward="false" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/g/graziano/sampepsserver/service/FamilyService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="73" column="0" lean-forward="true" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/g/graziano/sampepsserver/model/data/Child.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="27" column="15" lean-forward="false" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/g/graziano/sampepsserver/controller/RestController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="855">
@@ -861,30 +819,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="174" lean-forward="false" selection-start-line="24" selection-start-column="75" selection-end-line="24" selection-end-column="174" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/google-services.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
+        <state relative-caret-position="72">
           <caret line="20" column="8" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/google/auth/google-auth-library-oauth2-http/0.8.0/google-auth-library-oauth2-http-0.8.0.jar!/com/google/auth/oauth2/OAuth2Utils.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="176">
+          <caret line="31" column="38" lean-forward="false" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/google/auth/google-auth-library-oauth2-http/0.8.0/google-auth-library-oauth2-http-0.8.0.jar!/com/google/auth/oauth2/ServiceAccountCredentials.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="92" column="37" lean-forward="false" selection-start-line="92" selection-start-column="37" selection-end-line="92" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/google/auth/google-auth-library-oauth2-http/0.8.0/google-auth-library-oauth2-http-0.8.0.jar!/com/google/auth/oauth2/GoogleCredentials.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="46" column="31" lean-forward="true" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/g/graziano/sampepsserver/service/AndroidNotificationsService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="61" column="72" lean-forward="false" selection-start-line="61" selection-start-column="72" selection-end-line="61" selection-end-column="72" />
+        <state relative-caret-position="163">
+          <caret line="52" column="12" lean-forward="false" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1351#1375#1" expanded="true" />
-            <element signature="e#1429#1453#1" expanded="true" />
+            <element signature="e#1323#1347#1" expanded="true" />
+            <element signature="e#1401#1425#1" expanded="true" />
           </folding>
         </state>
       </provider>

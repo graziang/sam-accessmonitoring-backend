@@ -23,7 +23,6 @@ import org.springframework.web.client.RestTemplate;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.InputStream;
 import java.util.ArrayList;
 
 import org.json.JSONObject;
@@ -51,15 +50,9 @@ public class AndroidNotificationsService {
         try {
 
 
-
-
-            ClassLoader cl = this.getClass().getClassLoader();
-            InputStream inputStream = cl.getResourceAsStream("google-services.json");
-
-
-
+            
         FirebaseOptions options = new FirebaseOptions.Builder()
-                .setCredentials(GoogleCredentials.fromStream(inputStream))
+                .setCredentials(GoogleCredentials.fromStream(new FileInputStream("google-services.json")))
                 .build();
 
         FirebaseApp firebaseApp =  FirebaseApp.initializeApp(options);
