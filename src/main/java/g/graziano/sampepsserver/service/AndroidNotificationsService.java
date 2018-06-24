@@ -52,7 +52,7 @@ public class AndroidNotificationsService {
 
 
 
-            serviceAccount = new FileInputStream(new ClassPathResource("google-services.json").getFile();
+            serviceAccount = new FileInputStream(new ClassPathResource("google-services.json").getFile());
 
 
         FirebaseOptions options = new FirebaseOptions.Builder()
