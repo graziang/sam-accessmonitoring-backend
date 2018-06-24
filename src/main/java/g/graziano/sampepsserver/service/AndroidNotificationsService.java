@@ -46,7 +46,7 @@ public class AndroidNotificationsService {
 
 
         FirebaseOptions options = new FirebaseOptions.Builder()
-                .setCredentials(GoogleCredentials.fromStream(new FileInputStream("google-services.json")))
+                .setCredentials(GoogleCredentials.fromStream(new FileInputStream("accessmonitoring-key.json")))
                 .build();
 
         FirebaseApp firebaseApp =  FirebaseApp.initializeApp(options);
