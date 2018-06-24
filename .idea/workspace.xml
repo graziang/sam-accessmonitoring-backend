@@ -63,12 +63,12 @@
       <file leaf-file-name="AndroidNotificationsService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/g/graziano/sampepsserver/service/AndroidNotificationsService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="52" column="12" lean-forward="false" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="12" />
+            <state relative-caret-position="238">
+              <caret line="58" column="80" lean-forward="false" selection-start-line="58" selection-start-column="80" selection-end-line="58" selection-end-column="80" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1323#1347#1" expanded="true" />
-                <element signature="e#1401#1425#1" expanded="true" />
+                <element signature="e#1351#1375#1" expanded="true" />
+                <element signature="e#1429#1453#1" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -449,12 +449,12 @@
       <workItem from="1529766758803" duration="140000" />
       <workItem from="1529768689920" duration="401000" />
       <workItem from="1529831933167" duration="11000" />
-      <workItem from="1529834453830" duration="4731000" />
+      <workItem from="1529834453830" duration="4899000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64168000" />
+    <option name="totallyTimeSpent" value="64336000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1920" height="1012" extended-state="6" />
@@ -853,20 +853,20 @@
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/google/auth/google-auth-library-oauth2-http/0.8.0/google-auth-library-oauth2-http-0.8.0.jar!/com/google/auth/oauth2/GoogleCredentials.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="46" column="31" lean-forward="true" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
+        <state relative-caret-position="90">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/g/graziano/sampepsserver/service/AndroidNotificationsService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="52" column="12" lean-forward="false" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="12" />
+        <state relative-caret-position="238">
+          <caret line="58" column="80" lean-forward="false" selection-start-line="58" selection-start-column="80" selection-end-line="58" selection-end-column="80" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1323#1347#1" expanded="true" />
-            <element signature="e#1401#1425#1" expanded="true" />
+            <element signature="e#1351#1375#1" expanded="true" />
+            <element signature="e#1429#1453#1" expanded="true" />
           </folding>
         </state>
       </provider>
