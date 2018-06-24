@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "accessmonitoring-af5a3",
+  "private_key_id": "acb41ab3d33585a14ba5a7a1eb5537d00acffb17",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDZxHHTSExSxcTW\n5EPUTMU6HmFwS2W0cHxu71qMfsgbRv5nUnayYDotx8NOKJCQHQgsQ81aD81h8RGs\n4oGDCMxfDDR9fB0gMaGaVqm9x+EyF1VspqTKN1QLz8LLZsngONK/y36tRR/yJWb1\n3C22r5Fpafc6pZDAYsU7KsaMlsZfS3Cg3Gxdvy5cprNmyIIMwUX7a1uS77KCN7z7\nq+xt1e7K8VHpDZ8MIIxYKRKwffE+h+vI65iO5F6SR/Lf2tBbHBG1t1gOEnjImthd\ng36kdCsjGgNoP+8bps0o0oN1d59XnDvaSIkawVqSD8b3TXt8JIqeVDaL/hjeWRrb\nLkejCGe7AgMBAAECggEAPfa/zLbNwN+1WtAo3MfbduYeI63Qir9XKNnCkiehGOHi\nkdPNIoRvCYfF8v9n4xnfsXi5fd7xOeU2elMZNwfR31nBtdMTFo4IxbnTIsU1NuOc\n0wW37jJAH/xGGUpuNvb0QM7OhM8ef/BUk7DK8SiT38LfLjjeL1/rbyKEzIw6dfKi\nsI0QJd/TyfAs2GLxoKN5aDWzeXksetGgAsTGkZDEkp8gPR16lT7X7QmanMT7U8+N\nV2iUu0qi1TwUg3HfrIpUb4OxvC4vhijY957Y8MaL8ugJEwMwZBlDZZVxB2RDJunL\nIxYKtEYpCtF/1yHmmunZWvPOuvsr20hVGPRMHJuTQQKBgQD9DlUNyazvhrXXFaYi\ny6c3fnmS9F7RmjqXIIitteV7BBzDtiTayr9XtN2HOOfz6tv6J9pkKwkE7LHsoa7P\nRSlr7Lf3BlTWc5HrsN7uDK73qeGm7M11A85EUCyex2GESd+3HrnoqJwaFwT5kQIB\n7WixhFvlez0EcrIlaMXLVBWHnwKBgQDcTQN2ClooTCrBLsMgftzbQmujSmB5ZadW\nHkjJVt0mFaIbX9vPv+Cj8jzVSpBHAghmYu9uiy67gHr70OtGaBGaxwTaYzmvO1S3\nEuRBThXbX+fqVUeZSwBMPTxC89yh++CDPOnrwOCmDfOz6Wah6B/W1svss+0+uVmj\nK8WoHaRaZQKBgQC/NcUu1eTGWJOuIb2XLSr806QpVl0PI+qBpyOfnoH3ofPaLhdK\n+0f5jcCWHHmn5R6ytspeReZawj7u/nyIQUo7MnMPRMl2AX2RCeRpG0xZ9xN6fhQB\nBw8krzAICb+1pdxVEfKHyl+plxs7OEa8Dhe9irWlgKlqYwAZJEHQkYhzIQKBgEMD\nqmnd/E8F3HunnfPko4qPSe8CURactaqcy8dzhRJwwj9RiaxI0i0NIzQ+2mS/WY7L\nycn2zOB81OyFQQzJ25EZuYA1bva/NaX7OTQkbMGvCv1ds8oN5qlKd2pmhFdCJ6nE\nfeQZaD0bQWcZOP9HfWf9L0tx8FmESKA6UIYzfiuBAoGBANer/mSBz8N9f27LyYDz\nd+WuAvgz3NGANx1N3iRdHLxOmij1OPrqpD85/XMqv6uMby6H6Awl5TZl6PQEigKX\n9Rno2kKnJUUxC5Sb/fBVWkiaMmodI8fMbDY7koxMWnO2ltCs7QJWL3zUrCc/xrlz\nwnO6I7AMJu3Zd0/23PJ36ZDL\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-paron@accessmonitoring-af5a3.iam.gserviceaccount.com",
+  "client_id": "116285359780863251956",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-paron%40accessmonitoring-af5a3.iam.gserviceaccount.com"
+}
