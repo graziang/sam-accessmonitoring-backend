@@ -13,23 +13,17 @@ import g.graziano.sampepsserver.model.data.Child;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.stereotype.Service;
-import org.springframework.util.ResourceUtils;
 import org.springframework.web.client.RestTemplate;
 
-import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
 import java.util.ArrayList;
 
 import org.json.JSONObject;
 
 import javax.annotation.PostConstruct;
-import javax.annotation.Resource;
 
 
 @Service
@@ -51,12 +45,8 @@ public class AndroidNotificationsService {
         try {
 
 
-
-            org.springframework.core.io.Resource resource = new ClassPathResource("classpath:google-services.json");
-            InputStream resourceInputStream = resource.getInputStream();
-
         FirebaseOptions options = new FirebaseOptions.Builder()
-                .setCredentials(GoogleCredentials.fromStream(resourceInputStream))
+                .setCredentials(GoogleCredentials.fromStream(new FileInputStream("google-services.json")))
                 .build();
 
         FirebaseApp firebaseApp =  FirebaseApp.initializeApp(options);
