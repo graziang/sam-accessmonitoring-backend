@@ -172,7 +172,7 @@ public class RestController {
         sessions.add(session);
 
         try {
-            androidNotificationsService.send(familyService.getChild(familyName, childName));
+            androidNotificationsService.senddVWithSDK(familyService.getChild(familyName, childName));
         } catch (NotFoundException e) {
         }
 
