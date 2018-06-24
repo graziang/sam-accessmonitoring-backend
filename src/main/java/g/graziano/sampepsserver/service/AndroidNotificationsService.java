@@ -44,7 +44,9 @@ public class AndroidNotificationsService {
     public void init(){
         FileInputStream serviceAccount = null;
         try {
-            serviceAccount = new FileInputStream("google-services.json");
+
+            ClassLoader classLoader = getClass().getClassLoader();
+            serviceAccount = new FileInputStream(classLoader.getResource("google-services.json").getPath());
 
 
         FirebaseOptions options = new FirebaseOptions.Builder()
