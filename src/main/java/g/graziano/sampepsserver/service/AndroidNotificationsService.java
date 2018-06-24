@@ -96,7 +96,7 @@ public class AndroidNotificationsService {
         try {
             response = FirebaseMessaging.getInstance().send(message);
         } catch (FirebaseMessagingException e) {
-            e.printStackTrace();
+            logger.error(e.toString());
         }
 // Response is a message ID string.
         System.out.println("Successfully sent message: " + response);
