@@ -16,8 +16,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.stereotype.Service;
+import org.springframework.util.ResourceUtils;
 import org.springframework.web.client.RestTemplate;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -25,6 +27,7 @@ import java.util.ArrayList;
 import org.json.JSONObject;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
 
 
 @Service
@@ -45,8 +48,9 @@ public class AndroidNotificationsService {
         FileInputStream serviceAccount = null;
         try {
 
-            ClassLoader classLoader = getClass().getClassLoader();
-            serviceAccount = new FileInputStream(classLoader.getResource("google-services.json").getPath());
+
+            File file = ResourceUtils.getFile("classpath:google-services.json");
+            serviceAccount = new FileInputStream(file.getPath());
 
 
         FirebaseOptions options = new FirebaseOptions.Builder()
