@@ -44,6 +44,12 @@ public class FamilyService {
 
     public Family createFamily(Family family) throws NotFoundException {
 
+        if(family.getName().length() == 0){
+            String errorMessage = "Family name too short: [name: "  + family.getName() + "]";
+            logger.error(errorMessage);
+            throw new NotFoundException(errorMessage);
+        }
+
         if(familyRepository.existsByName(family.getName())){
             String errorMessage = "Family already exist: [name: "  + family.getName() + "]";
             logger.error(errorMessage);
@@ -124,6 +130,12 @@ public class FamilyService {
 
         if(childRepository.existsByNameAndFamilyId(child.getName(), family.getId())) {
             String errorMessage = "Child already exist: [child_name: "  + child.getName() + "]";
+            logger.error(errorMessage);
+            throw new NotFoundException(errorMessage);
+        }
+
+        if(child.getName().length() == 0){
+            String errorMessage = "Child name too short: [name: "  + child.getName() + "]";
             logger.error(errorMessage);
             throw new NotFoundException(errorMessage);
         }
